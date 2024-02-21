@@ -9,7 +9,7 @@
     <meta name="description" content="The Jekyll Doc Project theme is intended for technical documentation projects, such as user guides for software, hardware, and APIs. This Jekyll theme (which has an Apache 2.0 open source... " >
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" value="notranslate">
-    <link rel="icon"  type="image/x-icon" href="">
+    <link rel="icon"  type="image/x-icon" href="assets/favicon.ico">
 
     <!-- FontAwesome (GPL license) -->
    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -80,7 +80,7 @@
     <link rel="stylesheet" href="assets/css/user_defined_web_styles.css" />
     <style>
         ul#markdown-toc::before  {
-        content: "目次"
+        content: "Table of Contents"
          }
     </style>
 
@@ -94,10 +94,20 @@
         <div class="container topnavlinks">
             <div class="navbar-header">
               
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="fa fa-bars fa-2x"></span>
+                </button>
+                
+                
+                <button type="button" class="navbar-toggle toggle-sidebar-button"  data-toggle="offcanvas" data-target=".sidebar-nav">
+                    <span class="sidebarToggle fa fa-columns fa-2x"></span>
+                </button>
                 
 
 
                   
+  <div class="navbar-brand"><a class="noExtIcon" href="index.html"><img class="navbar-logo" src="assets/companylogo.png"/></a></div>
+  
 
             </div>
 
@@ -116,7 +126,7 @@
                     
                     
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sample Menu (JP)<b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sample Menu<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
                             
@@ -140,7 +150,7 @@
 
                     
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Another menu (JP)<b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Another menu<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
                             
@@ -160,16 +170,37 @@
 
                     
                     
-                    <li><a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:someemail@gmail.com?subject= feedback&body=I have some feedback about the Jekyll Doc Project: A Jekyll theme for documentation page: ' + window.location.href;"><i class="fa fa-envelope-o topnavfeedback"></i></a><li>
+                    <li><a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:someemail@gmail.com?subject=Feedback about docs feedback&body=I have some feedback about the Jekyll Doc Project: A Jekyll theme for documentation page: ' + window.location.href;"><i class="fa fa-envelope-o topnavfeedback"></i>Feedback</a><li>
 
                     
 
                     
-                    <li><a target="_blank" href="https://github.com/<organization>/<repo name>/blob/<branch name>/index.md" class="editButton noExtIcon"><i class="fa fa-github fa-lg"></i> githubで編集する</a>
+                    <li><a target="_blank" href="https://github.com/<organization>/<repo name>/blob/<branch name>/index.md" class="editButton noExtIcon"><i class="fa fa-github fa-lg"></i> Edit on GitHub</a>
 </li>
                     
 
 
+                </ul>
+                
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+
+                     <div id="search-topnav-container">
+                        <form action="search.html" method="get">
+                          <div class="input-group search">
+                            <input type="text" id="search-box" name="query" class="form-control" placeholder="Search ...">
+                            <div class="input-group-btn">
+                              <button class="btn btn-default" type="submit" value="search">
+                                <i class="glyphicon glyphicon-search"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </form>
+                        </div>
+
+
+                    </li>
                 </ul>
                 
             </div>
@@ -198,7 +229,7 @@
 
 <div class="productTitle">Generic</div>
 <p class="external">
-    <a href="#" id="collapseAll">すべて折りたたむ</a> | <a href="#" id="expandAll">すべて展開</a>
+    <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
 </p>
 
 
@@ -330,6 +361,13 @@
                     <div class="subtitle">
                     
 
+
+
+<a href="http://yourcompanysite.com" class="noExtIcon productSubtitle">Home</a>&nbsp;&nbsp;>&nbsp;&nbsp;Getting Started
+    
+
+
+
                       </div>
 
                       
@@ -341,6 +379,7 @@
                     <p>The Jekyll Doc Project theme is intended for technical documentation projects, such as user guides for software, hardware, and APIs. This Jekyll theme (which has an Apache 2.0 open source license) uses pages exclusively and features robust multi-level navigation. It includes both web and PDF output. The GitHub repo is here: <a href="https://github.com/amzn/jekyll-theme-doc-project">amzn/jekyll-theme-doc-project</a>.</p>
 
 <ul id="markdown-toc">
+  <li><a href="#japanese" id="markdown-toc-japanese">Japanese</a></li>
   <li><a href="#installation" id="markdown-toc-installation">Installation</a></li>
   <li><a href="#overwriting-theme-files" id="markdown-toc-overwriting-theme-files">Overwriting Theme Files</a></li>
   <li><a href="#content-types" id="markdown-toc-content-types">Content Types</a></li>
@@ -356,6 +395,12 @@
   <li><a href="#configure-the-footer" id="markdown-toc-configure-the-footer">Configure the Footer</a></li>
 </ul>
 
+<h2 id="japanese">Japanese</h2>
+<ul>
+  <li>hogehoge</li>
+  <li>テスト</li>
+</ul>
+
 <h2 id="installation">Installation</h2>
 
 <p>Before you can install the project, you may need to install Jekyll.</p>
@@ -363,8 +408,8 @@
 <ol>
   <li>Install Jekyll:
     <ul>
-      <li>[Install Jekyll on Mac][jekyllhowto-install-jekyll-on-mac]</li>
-      <li>[Install Jekyll on Windows][jekyllhowto-install-jekyll-on-windows]</li>
+      <li><a href="jekyllhowto-install-jekyll-on-mac.html">Install Jekyll on Mac</a></li>
+      <li><a href="jekyllhowto-install-jekyll-on-windows.html">Install Jekyll on Windows</a></li>
     </ul>
 
     <p>You can check if you already have Jekyll installed by running <code class="language-plaintext highlighter-rouge">jekyll -v</code>. If you don’t have the latest version, run <code class="language-plaintext highlighter-rouge">gem update jekyll</code>.</p>
@@ -422,7 +467,7 @@
 
 <h2 id="images">Images</h2>
 
-<p>You can store your images either inside or outside your project. In both cases, use the [image include][jekyllhowto-content-and-formatting#images_section] to insert images in your pages.</p>
+<p>You can store your images either inside or outside your project. In both cases, use the <a href="jekyllhowto-content-and-formatting.html#images_section">image include</a> to insert images in your pages.</p>
 
 <h3 id="storing-images-inside-the-project">Storing Images Inside the Project</h3>
 
@@ -524,7 +569,7 @@
 
 <p>To configure the sidebar, copy the format shown in _data/generic.yml into a new sidebar file. (Keep generic.yml as an example in your project, because YAML syntax can be picky and sometimes frustrating to get right. Generic.yml shows an example of content at every level.)</p>
 
-<p>Each of your pages should reference the appropriate sidebar either in the page’s frontmatter or as defined in the defaults in your _config.yml file. See [Sidebar Navigation][jekyllhowto-sidebar-navigation] for more details.</p>
+<p>Each of your pages should reference the appropriate sidebar either in the page’s frontmatter or as defined in the defaults in your _config.yml file. See <a href="jekyllhowto-sidebar-navigation.html">Sidebar Navigation</a> for more details.</p>
 
 <h2 id="top-navigation-bar">Top Navigation Bar</h2>
 
@@ -582,28 +627,77 @@
 
 
               
-                        <div class="logofooter"> </div>
-                <p class="footer-description"></p>
+                        <div class="logofooter"> About the Documentation</div>
+                <p class="footer-description">This is a description about this documentation site. You can customize this description by modifying the text in the about_description property of the footer.yml file.
+</p>
 
             </div>
             <div class="col-md-2 col-sm-6 paddingtop-bottom">
-                <h6 class="heading7"></h6>
+                <h6 class="heading7">Column 1</h6>
                 <ul class="footer-ul">
                   
+                    <li><a class="noExtIcon" href="http://someurl1.com"> Column 1 Link 1</a></li>
+                    
+                    <li><a class="noExtIcon" href="http://someurl2.com"> Column 1 Link 2</a></li>
+                    
+                    <li><a class="noExtIcon" href="http://someurl3.com"> Column 1 Link 3</a></li>
+                    
+                    <li><a class="noExtIcon" href="http://someurl4.com"> Column 1 Link 4</a></li>
+                    
+                    <li><a class="noExtIcon" href="http://someurl5.com"> Column 1 Link 5</a></li>
+                    
+                    <li><a class="noExtIcon" href="http://someurl6.com"> Column 1 Link 6</a></li>
+                    
+                    <li><a class="noExtIcon" href="http://someurl7.com"> Column 1 Link 7</a></li>
+                    
+                    <li><a class="noExtIcon" href="http://someurl8.com"> Column 1 Link 8</a></li>
+                    
                 </ul>
             </div>
 
             <div class="col-md-2 col-sm-6 paddingtop-bottom">
-              <h6 class="heading7"></h6>
+              <h6 class="heading7">Column 2</h6>
               <ul class="footer-ul">
                 
+                  <li><a class="noExtIcon" href="http://someurl1.com"> Column 2 Link 1</a></li>
+                  
+                  <li><a class="noExtIcon" href="http://someurl2.com"> Column 2 Link 2</a></li>
+                  
+                  <li><a class="noExtIcon" href="http://someurl3.com"> Column 2 Link 3</a></li>
+                  
+                  <li><a class="noExtIcon" href="http://someurl4.com"> Column 2 Link 4</a></li>
+                  
+                  <li><a class="noExtIcon" href="http://someurl5.com"> Column 2 Link 5</a></li>
+                  
+                  <li><a class="noExtIcon" href="http://someurl6.com"> Column 2 Link 6</a></li>
+                  
+                  <li><a class="noExtIcon" href="http://someurl7.com"> Column 2 Link 7</a></li>
+                  
+                  <li><a class="noExtIcon" href="http://someurl8.com"> Column 2 Link 8</a></li>
+                  
               </ul>
             </div>
 
             <div class="col-md-3 col-sm-6 paddingtop-bottom">
-              <h6 class="heading7"></h6>
+              <h6 class="heading7">Column 3</h6>
               <ul class="footer-ul">
                 
+                  <li><a class="noExtIcon" href="http://someurl1.com"> Column 3 Link 1</a></li>
+                  
+                  <li><a class="noExtIcon" href="http://someurl2.com"> Column 3 Link 2</a></li>
+                  
+                  <li><a class="noExtIcon" href="http://someurl3.com"> Column 3 Link 3</a></li>
+                  
+                  <li><a class="noExtIcon" href="http://someurl4.com"> Column 3 Link 4</a></li>
+                  
+                  <li><a class="noExtIcon" href="http://someurl5.com"> Column 3 Link 5</a></li>
+                  
+                  <li><a class="noExtIcon" href="http://someurl6.com"> Column 3 Link 6</a></li>
+                  
+                  <li><a class="noExtIcon" href="http://someurl7.com"> Column 3 Link 7</a></li>
+                  
+                  <li><a class="noExtIcon" href="http://someurl8.com"> Column 3 Link 8</a></li>
+                  
               </ul>
             </div>
 
@@ -617,7 +711,7 @@
 <div class="copyright">
     <div class="container">
         <div class="col-md-12">
-            <p>© </p>
+            <p>© 2017 Your Company, Inc.</p>
         </div>
     </div>
 </div>

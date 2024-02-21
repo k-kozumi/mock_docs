@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Search | Amazon開発者ポータル</title>
+    
+    <base>
+    <meta name="description" content="            <div... " >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" value="notranslate">
+    <link rel="icon"  type="image/x-icon" href="">
+
+    <!-- FontAwesome (GPL license) -->
+   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- jQuery (MIT license)-->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <!-- jQuery cookie (MIT license)-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <!-- Navgoco (BSD license)-->
+    <script type="text/javascript" src="assets/js/jquery.navgoco.min.js"></script>
+    <!-- Bootstrap (MIT license)-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Anchor JS (MIT license)-->
+    
+
+    <script>
+        $( document ).ready(function() {
+            $("#docnavsidebar").navgoco({
+                caretHtml: '',
+                accordion: false,
+                openClass: 'open', // open
+                save: true,
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 300,
+                    easing: 'swing'
+                }
+            });
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#docnavsidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#docnavsidebar").navgoco('toggle', true);
+            });
+        });
+
+    </script>
+
+ <!-- For responsive button to toggle sidebar -->
+    <script>
+        $(document).ready(function() {
+            $('[data-toggle=offcanvas]').click(function() {
+                $('.row-offcanvas').toggleClass('active');
+            });
+        });
+    </script>
+
+    <!-- User defined js -->
+    <script src="assets/js/user_defined_javascript.js"></script>
+    <!--Bootstrap (MIT license) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <!-- Original theme from Bootstrap Bootswatch fork: http://www.codeply.com/go/rV7KhUjwCN (MIT license) -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/user_defined_web_styles.css" />
+    <style>
+        ul#markdown-toc::before  {
+        content: "目次"
+         }
+    </style>
+
+</head>
+<body class="default">
+<div class="page-container">
+
+
+    <!-- Top Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container topnavlinks">
+            <div class="navbar-header">
+              
+                
+
+
+                  
+
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-left">
+
+                    <!-- single item nav items appear here -->
+
+                    
+                    
+                    
+                    
+
+                          <!-- drop-down nav items appear here -->
+
+                    
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sample Menu (JP)<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+                            
+                            <li><a href="https://talk.jekyllrb.com" class="noExtIcon">First item</a></li>
+                            
+                            
+                            
+                            <li><a href="http://amazon.com" class="noExtIcon">Second item</a></li>
+                            
+                            
+                            
+                            <li><a href="http://nytimes.com" class="noExtIcon">Third item</a></li>
+                            
+                            
+                            
+                            <li><a href="http://google.com" class="noExtIcon">Fourth item</a></li>
+                            
+                            
+                        </ul>
+                    </li>
+
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Another menu (JP)<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+                            
+                            <li><a href="index.html">Getting Started</a></li>
+                            
+                            
+                            
+                            <li><a href="jekyllhowto-content-and-formatting.html">Content and Formatting</a></li>
+                            
+                            
+                            
+                            <li><a href="jekyllhowto-sidebar-navigation.html">Sidebar navigation</a></li>
+                            
+                            
+                        </ul>
+                    </li>
+
+                    
+                    
+                    <li><a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:someemail@gmail.com?subject= feedback&body=I have some feedback about the Search page: ' + window.location.href;"><i class="fa fa-envelope-o topnavfeedback"></i></a><li>
+
+                    
+
+                    
+                    <li><a target="_blank" href="https://github.com/<organization>/<repo name>/blob/<branch name>/assets/search.html" class="editButton noExtIcon"><i class="fa fa-github fa-lg"></i> githubで編集する</a>
+</li>
+                    
+
+
+                </ul>
+                
+            </div>
+
+        </div>
+
+
+        <!-- /.container -->
+    </nav>
+
+<div class="container">
+        <div class="row row-offcanvas row-offcanvas-left">
+
+            <!-- sidebar -->
+            <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+
+                
+<div class="mydocsidebar">
+
+
+<div class="sidebar-inner">
+
+
+  
+
+
+
+
+    <ul id="docnavsidebar" class="docnav">
+    
+
+    </li>
+</ul>
+
+<hr class="resourceSeparator"></hr>
+<div class="relatedResources"></div>
+<ul id="entrypages">
+        
+    </li>
+</ul>
+</div>
+</div>
+<script>$("li.open").parents('li').toggleClass("open");</script>
+
+
+            </div>
+
+            <!-- main area -->
+            <div class="col-xs-12 col-sm-9 main">
+
+                    <div class="subtitle">
+                    
+
+                      </div>
+
+                      
+
+
+                    <h1>Search</h1>
+
+                
+                    <div style="display:none">
+<form action="search.html" method="get">
+  <div class="input-group search">
+    <input type="text" id="search-box" name="query" class="form-control" placeholder="検索">
+    <div class="input-group-btn">
+      <button class="btn btn-default" type="submit" value="search">
+        <i class="glyphicon glyphicon-search"></i>
+      </button>
+    </div>
+  </div>
+</form>
+</div>
+
+<div id="search-results"></div>
+
+<script>
+  window.store = {
+          ,
+
+    
+      
+
+"404-html": {
+  "title": "Page Not Found",
+  "tags": "",
+  "content": "Sorry, page not found. Please let us know about the broken link.    Search    ",
+  "url": "404.html",
+  "product": ""
+}
+,
+
+
+      
+
+"contact-html": {
+  "title": "Contact me",
+  "tags": "",
+  "content": "contact form goes here…",
+  "url": "contact.html",
+  "product": ""
+}
+,
+
+
+      
+
+"index-html": {
+  "title": "Jekyll Doc Project: A Jekyll theme for documentation",
+  "tags": "",
+  "content": "The Jekyll Doc Project theme is intended for technical documentation projects, such as user guides for software, hardware, and APIs. This Jekyll theme (which has an Apache 2.0 open source license) uses pages exclusively and features robust multi-level navigation. It includes both web and PDF output. The GitHub repo is here: amzn/jekyll-theme-doc-project.  Installation  Overwriting Theme Files  Content Types  Breadcrumbs  Images          Storing Images Inside the Project      Storing Images Outside Your Project        Frontmatter  Sidebar Configuration  Top Navigation Bar  Configure the FooterInstallationBefore you can install the project, you may need to install Jekyll.  Install Jekyll:          [Install Jekyll on Mac][jekyllhowto-install-jekyll-on-mac]      [Install Jekyll on Windows][jekyllhowto-install-jekyll-on-windows]        You can check if you already have Jekyll installed by running jekyll -v. If you don’t have the latest version, run gem update jekyll.    Download the theme from the amzn/jekyll-theme-doc-project repo.  Configure the values in the _config.yml file based on the inline code comments in that file.      Serve or build the Jekyll site:    jekyll serve      Overwriting Theme FilesYou’ll most likely want to add some of your own styles, esp. to style the top navigation bar and other elements. There are three files specifically set up for this:  assets/css/pdf/user_defined_web_styles.css (web styles)  assets/css/pdf/user_defined_pdf_styles.css (print styles)  assets/js/user_defined_javascript.js (web javascript)These files are blank but are referenced in the theme’s layout files. By adding these files in your project and defining your styles, they will automatically be included in the layout.Content TypesThis theme uses collections exclusively (instead of posts). Collections are a content type, like a page or post. In this case, the content type is a document within the “docs” folder. Documents function just like pages, for the most part. (When referring to them in this documentation,  “pages” and “documents” are used interchangeably.) Organize your pages inside the _docs folder.Organize your pages with the folder structure that you want displayed in the breadcrumb. Use the spacing and capitalization in your folder names that you want reflected in your breadcrumb path. For example, “Getting Started” instead of “getting_started”.The folder structure informs the breadcrumb display only. Upon build, the site output will pull all of the pages out of their folders, subfolders, etc., and put them into the root directory of _site. This “flattening” of the page hierarchy enables relative linking in the project. Relative links allow you to view the built site offline or to push it from one environment or directory structure to the next without worrying about valid paths to theme assets or other links.BreadcrumbsIf you want breadcrumbs in your project, set these properties in the _config.yml file:# Display breadcrumbs at all?breadcrumb_display: true# Display Home path in breadcrumb?breadcrumb_home_display: true# Url for Home path to point tobreadcrumb_home_url: http://yourcompanysite.com# Display name for \"Home\" pathbreadcrumb_home_name: HomeJekyll projects require an index.html (or index.md) file in your root directory. This is the page that loads by default. Because this page lives outside your regular _docs directory, you have to manually define the breadcrumb path (after Home) that you want there.Note that clicking the folder paths in the breadcrumb doesn’t do anything except for Home. Visually, all paths look the same, but no logic is configured to dynamically render a list of items contained in file path folders.ImagesYou can store your images either inside or outside your project. In both cases, use the [image include][jekyllhowto-content-and-formatting#images_section] to insert images in your pages.Storing Images Inside the ProjectIf you want to store your images inside your Jekyll project, store the images in the _docs/images folder. In the _config.yml file, set the image path that will be prepended to the image file name. By default, the output will show the images in the same folder structure as you have in your Jekyll project source directory. If you put your images in \\/images, then when your Jekyll site builds, your images will be in \\/images. Rather than writing images/myfile.png in the file parameter of the image include, you can put the image path in the config file’s image_path parameter:image_path: imagesThis path will be prepended before image file names. (Note that a trailing slash is added automatically in the image include.)This way, when you use the image include to insert images, you can simply write myfile.png for the file parameter.Storing Images Outside Your ProjectSometimes you might want to store your images outside your Jekyll build. Git repos don’t handle large numbers of images well (your .git files become huge), since images are binaries. If you want to store images outside your project, open .gitignore and add images to it.In the image_path property in the _config.yml file, define the path where the images will be available:image_path: https://s3-us-west-1.amazonaws.com/my-bucket-name/my-project-imagesIf you’re using AWS S3, you can transfer images to your server from the command line. See AWS Command Line Interface for details. After installing the aws cli, you’ll need to configure your credentials and determine the right commands to transfer files to your bucket.Within your Jekyll project, you could add a shell script that contains the command needed to transfer files to your bucket, like this:aws s3 sync images s3://my-bucket-name/my-project-imagesThe images_upload.sh contains this generic AWS CLI command. The S3 bucket will store the images in a structure like this:my-bucket-name &gt; my-project-images &gt; image1.png├── my-bucket-name│   ├── my-project-images│      ├── image1.pngFrontmatterMake sure each page has frontmatter at the top like this:---title: \"Sample 1: The Beginning\"permalink: sample.htmlsidebar: genericproduct: Generic Product---(Even if it’s a Markdown file, the permalink property should specify the .html extension, since this is how the file will appear in the output.)                                    Property         Description                           title         The title for the page. If you want to use a colon in your page title, you must enclose the title’s value in quotation marks. Note that titles in your pages’ frontmatter are not synced with the titles in your sidebar data file. If you change it in one place, remember to change it in the other too.                     permalink         Use the same name as your file name, but use “.html” instead of “.md” in the permalink property. Do not put forward slashes around the permalink (this makes Jekyll put the file inside a folder in the output). When Jekyll builds the site, it will put the page into the root directory rather than leaving it in a subdirectory or putting it inside a folder and naming the file index.html.                      sidebar         The name of the sidebar that this page should use (don’t include “.yml” in the name).                      product         The product for this content. This appears in search and could be used in integrations with more robust search services.          Tip: You can store the sidebar and product frontmatter as defaults in your project’s _config.yml file.defaults:  -    scope:      path: \"\"      type: docs/myproject    values:      product: My Project      sidebar: myprojectsidebarIn this example, all documents in the _docs/myproject file will automatically have product: My Project and sidebar: myprojectsidebar as values in the frontmatter when the site builds.Sidebar ConfigurationTo configure the sidebar, copy the format shown in _data/generic.yml into a new sidebar file. (Keep generic.yml as an example in your project, because YAML syntax can be picky and sometimes frustrating to get right. Generic.yml shows an example of content at every level.)Each of your pages should reference the appropriate sidebar either in the page’s frontmatter or as defined in the defaults in your _config.yml file. See [Sidebar Navigation][jekyllhowto-sidebar-navigation] for more details.Top Navigation BarYou configure the top navigation bar through the _data/topnav.yml file. You can configure single links or links with drop downs. If you want the search to appear in the sidebar rather than the top nav, see these options in the _config.yml file:search_in_topnav: truesearch_in_sidebar: falsePlacing the search in the top navigation bar gives the theme more visual balance.When you shrink the browser size, the navbar options change to a couple of icons. You can control whether those icons appear with these settings in _config.yml:toggle-sidebar-button: nonenavbar-toggle: none(You might want to hide these buttons if your nav bar doesn’t have any links or options, or if the sidebar is empty.)Configure the FooterYou configure the footer through the options in _data/footer.yml.",
+  "url": "index.html",
+  "product": ""
+}
+,
+
+
+      
+
+"linkstest-html": {
+  "title": "links text",
+  "tags": "",
+  "content": "",
+  "url": "linkstest.html",
+  "product": ""
+}
+,
+
+
+      
+
+"assets-css-main-css": {
+  "title": "",
+  "tags": "",
+  "content": ".navbar-default {  background-color: #ffffff;  border-color: #ffffff;}.navbar-default .navbar-brand {  color: #111111;}.navbar-default .navbar-brand:hover,.navbar-default .navbar-brand:focus {  color: #ee7600;}.navbar-default .navbar-text {  color: #111111;}.navbar-default .navbar-nav > li > a {  color: #111111;}.navbar-default .navbar-nav > li > a:hover,.navbar-default .navbar-nav > li > a:focus {  color: #ee7600;}.navbar-default .navbar-nav > li > .dropdown-menu {  background-color: #ffffff;}.navbar-default .navbar-nav > li > .dropdown-menu > li > a {  color: #111111;}.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {  color: #ee7600;  background-color: #ffffff;}.navbar-default .navbar-nav > li > .dropdown-menu > li > .divider {  background-color: #ffffff;}.navbar-default .navbar-nav .open .dropdown-menu > .active > a,.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {  color: #ee7600;  background-color: #ffffff;}.navbar-default .navbar-nav > .active > a,.navbar-default .navbar-nav > .active > a:hover,.navbar-default .navbar-nav > .active > a:focus {  color: #ee7600;  background-color: #ffffff;}.navbar-default .navbar-nav > .open > a,.navbar-default .navbar-nav > .open > a:hover,.navbar-default .navbar-nav > .open > a:focus {  color: #ee7600;  background-color: #ffffff;}.navbar-default .navbar-toggle {  border-color: #ffffff;}.navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus {  background-color: #ffffff;}.navbar-default .navbar-toggle .icon-bar {  background-color: #111111;}.navbar-default .navbar-collapse,.navbar-default .navbar-form {  border-color: #111111;}.navbar-default .navbar-link {  color: #111111;}.navbar-default .navbar-link:hover {  color: #ee7600;}@media (max-width: 767px) {  .navbar-default .navbar-nav .open .dropdown-menu > li > a {    color: #111111;  }  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {    color: #ee7600;  }  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {    color: #ee7600;    background-color: #ffffff;  }}ul.navbar-nav a:hover {  text-decoration: underline;}img.navbar-logo {  max-height: 50px;}.navbar-brand {  margin-right: 30px;  padding-top: 10px;}.navbar {  border-bottom: 1px solid #dedede;  font-size: 16px;}@media (min-width: 768px) {  .navbar-nav > li {    padding-top: 10px;  }}.navbar-default .navbar-nav > li > a {  font-size: 16px;  font-family: Arial;}ul.nav.navbar-nav li a {  white-space: nowrap;  margin-right: 7px;}/* search area */#search-topnav-container {  margin-top: -26px;}#search-demo-container ul#results-container {  list-style: none;  font-size: 12px;  background-color: white;  position: absolute;  top: 40px;  left: 20px;  z-index: -1;  width: 223px;  border-left: 1px solid #dedede;  box-shadow: 2px 3px 2px #dedede;}ul#results-container a {  background-color: transparent;}ul#results-container a:hover {  color: black;}#search-demo-container a:hover {  color: black;}#search-input {  width: 20em;  font-size: 0.8em;  -webkit-box-sizing: border-box;  -moz-box-sizing: border-box;  box-sizing: border-box;  float: right;  margin-top: 10px;}#search-results {  margin-top: 30px;}div.searchFormDisplay {  display: none;}.navbar-brand {  margin-right: 50px;}.navbar-brand-text {  margin-top: 15px;  font-size: 25px;  margin-right: 50px;}a.navbarHomeLink {  color: black;  text-decoration: none;}i.fa.fa-home.fa-lg {  padding-right: 10px;  vertical-align: 0%;}/* end search *//*set navbar breakpoint so that it converts to hamburger earlier *//* end earlier breakpoint code *//* Feedback button */i.fa.fa-envelope-o.topnavfeedback {  padding-right: 8px;}/* heading styles *//*make room for the nav bar */h1[id],h2[id],h3[id],h4[id],h5[id],h6[id],dt[id] {  padding-top: 80px;  margin-top: -60px;}h1 {  margin-bottom: 30px;}h2 {  margin-bottom: 25px;}h3 {  margin-bottom: 20px;}h2 {  color: #444;}h3 {  color: #777;}.subtitle {  font-size: 16px;  color: gray;  margin-top: 50px;  padding-bottom: 15px;}h1 {  margin-top: 0px;}.h2, h2 {  font-size: 24px;}.h3, h3 {  font-size: 18px;}.h4, h4 {  font-size: 16px;}.docnav {  max-width: 225px;}.docnav {  padding-left: 0px;  margin-left: 10px;  padding-right: 15px;}.docnav ul {  padding-left: 15px;}.docnav li {  list-style: none;  font: normal 12px \"Open Sans\", \"Lucida Grande\", \"Helvetica Neue\", Arial;  border-bottom: 0px;}.docnav li a:hover,.docnav li a:active {  text-decoration: none;  color: #666;}/* plus */.docnav li.level1 > a > span:after,.docnav li.level2 > a > span:after,.docnav li.level3 > a > span:after {  content: \"\\f0fe\";  font-family: \"FontAwesome\";  color: #e47911;  font-size: 14px;  padding-right: 12px;  text-decoration: none;}/* empty square*/.docnav li.level1items > a:before,.docnav li.level2items > a:before,.docnav li.level3items > a:before {  content: \"\\f096\";  font-family: \"FontAwesome\";  color: #e47911;  padding-right: 10px;  text-decoration: none;  /*text-indent: -1.5em;*/}/* minus */.docnav li.open > a > span:after {  content: \"\\f146\";  font-family: \"FontAwesome\";  color: #e47911;  font-size: 14px;  padding-right: 10px;}.docnav li.level3,.docnav li.level3items {  padding-left: 10px;}.docnav li.level2,.docnav li.level2items {  padding-left: 10px;}.docnav li.level1,.docnav li.level1items {  padding-left: 10px;}.docnav li {  margin: 7px 0px;}li.level1.open > ul > li.level1items.open a,li.level2.open > ul > li.level2items.open a,li.level3.open > ul > li.level3items.open a {  color: black;  font-weight: bold;}li.level1.open > ul > li.level1items.open > a:before,li.level2.open > ul > li.level2items.open > a:before,li.level3.open > ul > li.level3items.open > a:before {  color: black;}.relatedResources {  font-size: 13px;  color: black;  margin: 10px 0px;}.productTitle {  font-size: 18px;  font-weight: bold;  color: #333333;  display: block;  margin-right: 8px;}hr.resourceSeparator {  display: block;  margin-top: 1.7em;  margin-bottom: 1.7em;  margin-left: 0px;  /*margin-right: auto;*/  border-width: 1px;  color: black;  max-width: 80%;}.docnav li a {  line-height: 18px;  display: table;  white-space: pre-wrap;  /* css-3 */  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */  white-space: -pre-wrap;  /* Opera 4-6 */  white-space: -o-pre-wrap;  /* Opera 7 */  word-wrap: break-word;  /* Internet Explorer 5.5+ */  text-indent: -20px;}@media (max-width: 600px) {  .docnav li a {    max-width: 180px;  }  .githubButton {    display: none;  }}@media (min-width: 600px) {  .docnav li a {    max-width: 240px;  }}ul#docnavsidebar li a:focus {  text-decoration: none;}#sidebar {  height: 100%;  padding-right: 0;  overflow-y: auto;}#sidebar .nav {  width: 95%;}/* collapsed sidebar styles */@media screen and (max-width: 767px) {  .row-offcanvas {    position: relative;    -webkit-transition: all 0.75s ease-out;    -moz-transition: all 0.75s ease-out;    transition: all 0.75s ease-out;  }  .row-offcanvas-right .sidebar-offcanvas {    right: -41.6%;  }  .row-offcanvas-left .sidebar-offcanvas {    left: -41.6%;  }  .row-offcanvas-right.active {    right: 41.6%;  }  .row-offcanvas-left.active {    left: 41.6%;  }  .sidebar-offcanvas {    position: absolute;    top: 0;    width: 41.6%;  }  #sidebar {    padding-top: 0;  }}#sidebar {  background-color: #f7f7f7;  padding-bottom: 50px;  padding-top: 50px;}.mydocsidebar .input-group.search {  margin-top: -10px;}/* callout styles*/.bs-callout {  padding: 20px;  margin: 20px 0;  border: 1px solid #eee;  border-left-width: 5px;  border-radius: 3px;}.calloutTitle {  margin-top: 0;  margin-bottom: 5px;  font-size: 16px;}.bs-callout p:last-child {  margin-bottom: 0;}.bs-callout code {  border-radius: 3px;}.bs-callout + .bs-callout {  margin-top: -5px;}.bs-callout-default {  border-left-color: #777;}.bs-callout-default .calloutTitle {  color: #777;}.bs-callout-primary {  border-left-color: #428bca;}.bs-callout-primary .calloutTitle {  color: #428bca;}.bs-callout-success {  border-left-color: #5cb85c;}.bs-callout-success .calloutTitle {  color: #5cb85c;}.bs-callout-danger {  border-left-color: #d9534f;}.bs-callout-danger .calloutTitle {  color: #d9534f;}.bs-callout-warning {  border-left-color: #f0ad4e;}.bs-callout-warning .calloutTitle {  color: #f0ad4e;}.bs-callout-info {  border-left-color: #5bc0de;}.bs-callout-info .calloutTitle {  color: #5bc0de;}.alert code {  background: transparent;}blockquote {  background-color: #eef7fa;  font-family: arial;  font-size: 0.9em;  margin: 0px;  padding: 1em;}p.note {  background: #f1f1f1;  padding: 1em;  border-left: 1em solid orange;}p.tip {  background: #f1f1f1;  padding: 1em;  border-left: 1em solid deepskyblue;}p.warning {  background: #f1f1f1;  padding: 1em;  border-left: 1em solid red;}p.note::before {  content: \"Note: \";  font-weight: bold;}p.tip::before {  content: \"Tip: \";  font-weight: bold;}p.warning::before {  content: \"Warning: \";  font-weight: bold;}/* end callout styles*/body.docs .highlight {  white-space: pre;  overflow: auto;  word-wrap: normal;  /* horizontal scrolling */  -moz-border-radius: 5px;  -webkit-border-radius: 5px;  border-radius: 5px;  padding: 15px;  padding-left: 10px;  background: #202020;  color: whitesmoke;}body.docs .highlight .hll {  background-color: #202020;}body.docs .highlight .c {  color: #75715e;}/* Comment */body.docs .highlight .err {  color: lime;  background-color: #1e0010;}/* Error */body.docs .highlight .k {  color: #66d9ef;}/* Keyword */body.docs .highlight .l {  color: #ae81ff;}/* Literal */body.docs .highlight .n {  color: #f8f8f2;}/* Name */body.docs .highlight .o {  color: #f92672;}/* Operator */body.docs .highlight .p {  color: #f8f8f2;}/* Punctuation */body.docs .highlight .cm {  color: #75715e;}/* Comment.Multiline */body.docs .highlight .cp {  color: #75715e;}/* Comment.Preproc */body.docs .highlight .c1 {  color: #75715e;}/* Comment.Single */body.docs .highlight .cs {  color: #75715e;}/* Comment.Special */body.docs .highlight .ge {  font-style: italic;}/* Generic.Emph */body.docs .highlight .gs {  font-weight: bold;}/* Generic.Strong */body.docs .highlight .kc {  color: #66d9ef;}/* Keyword.Constant */body.docs .highlight .kd {  color: #66d9ef;}/* Keyword.Declaration */body.docs .highlight .kn {  color: #f92672;}/* Keyword.Namespace */body.docs .highlight .kp {  color: #66d9ef;}/* Keyword.Pseudo */body.docs .highlight .kr {  color: #66d9ef;}/* Keyword.Reserved */body.docs .highlight .kt {  color: #66d9ef;}/* Keyword.Type */body.docs .highlight .ld {  color: #e6db74;}/* Literal.Date */body.docs .highlight .m {  color: #ae81ff;}/* Literal.Number */body.docs .highlight .s {  color: #e6db74;}/* Literal.String */body.docs .highlight .na {  color: #a6e22e;}/* Name.Attribute */body.docs .highlight .nb {  color: #f8f8f2;}/* Name.Builtin */body.docs .highlight .nc {  color: #a6e22e;}/* Name.Class */body.docs .highlight .no {  color: #66d9ef;}/* Name.Constant */body.docs .highlight .nd {  color: #a6e22e;}/* Name.Decorator */body.docs .highlight .ni {  color: #f8f8f2;}/* Name.Entity */body.docs .highlight .ne {  color: #a6e22e;}/* Name.Exception */body.docs .highlight .nf {  color: #a6e22e;}/* Name.Function */body.docs .highlight .nl {  color: #f8f8f2;}/* Name.Label */body.docs .highlight .nn {  color: #f8f8f2;}/* Name.Namespace */body.docs .highlight .nx {  color: #a6e22e;}/* Name.Other */body.docs .highlight .py {  color: #f8f8f2;}/* Name.Property */body.docs .highlight .nt {  color: #dedede;}/* Name.Tag */body.docs .highlight .nv {  color: #f8f8f2;}/* Name.Variable */body.docs .highlight .ow {  color: #f92672;}/* Operator.Word */body.docs .highlight .w {  color: #f8f8f2;}/* Text.Whitespace */body.docs .highlight .mf {  color: #ae81ff;}/* Literal.Number.Float */body.docs .highlight .mh {  color: #ae81ff;}/* Literal.Number.Hex */body.docs .highlight .mi {  color: #ae81ff;}/* Literal.Number.Integer */body.docs .highlight .mo {  color: #ae81ff;}/* Literal.Number.Oct */body.docs .highlight .sb {  color: #e6db74;}/* Literal.String.Backtick */body.docs .highlight .sc {  color: #e6db74;}/* Literal.String.Char */body.docs .highlight .sd {  color: #e6db74;}/* Literal.String.Doc */body.docs .highlight .s2 {  color: #e6db74;}/* Literal.String.Double */body.docs .highlight .se {  color: #ae81ff;}/* Literal.String.Escape */body.docs .highlight .sh {  color: #e6db74;}/* Literal.String.Heredoc */body.docs .highlight .si {  color: #e6db74;}/* Literal.String.Interpol */body.docs .highlight .sx {  color: #e6db74;}/* Literal.String.Other */body.docs .highlight .sr {  color: #e6db74;}/* Literal.String.Regex */body.docs .highlight .s1 {  color: #e6db74;}/* Literal.String.Single */body.docs .highlight .ss {  color: #e6db74;}/* Literal.String.Symbol */body.docs .highlight .bp {  color: #f8f8f2;}/* Name.Builtin.Pseudo */body.docs .highlight .vc {  color: #f8f8f2;}/* Name.Variable.Class */body.docs .highlight .vg {  color: #f8f8f2;}/* Name.Variable.Global */body.docs .highlight .vi {  color: #f8f8f2;}/* Name.Variable.Instance */body.docs .highlight .il {  color: #ae81ff;}/* Literal.Number.Integer.Long *//* Generic Heading & Diff Header */body.docs .highlight .gu {  color: #75715e;}/* Generic.Subheading & Diff Unified/Comment? */body.docs .highlight .gd {  color: #f92672;}/* Generic.Deleted & Diff Deleted */body.docs .highlight .gi {  color: #a6e22e;}/* Generic.Inserted & Diff Inserted */table p {  max-width: 100%;}th {  text-align: left;}table {  width: 100%;  margin-bottom: 20px;  border: 1px solid #dedede;  background-color: transparent;}table > thead > tr > th,table > tbody > tr > th,table > tfoot > tr > th,table > thead > tr > td,table > tbody > tr > td,table > tfoot > tr > td,table > tbody > tr > td ol > li,table > tbody > tr > td ol > li {  padding: 8px;  line-height: 1.42857143;  vertical-align: top;  border-top: 1px solid #ddd;  font-size: 15px;}table > tbody > tr > td > p {  padding: 8px 0px;  line-height: 1.42857143;  vertical-align: top;  font-size: 1.5rem;}table > thead > tr > th {  vertical-align: bottom;  border-bottom: 2px solid #ddd;  text-transform: none;  background-color: #777;  color: white;  text-align: left;}table > caption + thead > tr:first-child > th,table > colgroup + thead > tr:first-child > th,table > thead:first-child > tr:first-child > th,table > caption + thead > tr:first-child > td,table > colgroup + thead > tr:first-child > td,table > thead:first-child > tr:first-child > td {  border-top: 0;}table > tbody > tr:nth-of-type(odd) {  background-color: #f9f9f9;}table col[class*=col-] {  position: static;  display: table-column;  float: none;}table td[class*=col-],table th[class*=col-] {  position: static;  display: table-cell;  float: none;}table td:first-child {  width: 150px;  /*font-weight:bold;*/}table.boldFirstColumn td:first-child {  font-weight: bold;}table tr td {  hyphens: auto;}table.dataTable thead {  background-color: #444;}table td {  hyphens: auto;}table code {  background-color: transparent;}table code {  background-color: transparent;}pre,table code {  white-space: pre-wrap;  /* css-3 */  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */  white-space: -pre-wrap;  /* Opera 4-6 */  white-space: -o-pre-wrap;  /* Opera 7 */  word-wrap: break-word;  /* Internet Explorer 5.5+ */}td.white {  background-color: white;}td.gray {  background-color: #f7f7f7;}table code {  white-space: pre-wrap;  /* css-3 */  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */  white-space: -pre-wrap;  /* Opera 4-6 */  white-space: -o-pre-wrap;  /* Opera 7 */  word-wrap: break-word;  /* Internet Explorer 5.5+ */}table, table p, table ol li, table ul li {  max-width: 100%;}table code {  word-wrap: break-word;}table {  table-layout: auto;}/*nav tabs */.nav-tabs > li.active > a,.nav-tabs > li.active > a:hover,.nav-tabs > li.active > a:focus {  background-color: #248ec2;  color: white;}.nav-tabs {  border-bottom: 1px solid #ddd;}.nav-tabs > li {  float: left;  margin-bottom: -1px;}.nav-tabs > li > a {  margin-right: 2px;  line-height: 1.42857143;  border: 1px solid transparent;  border-radius: 4px 4px 0 0;}.nav-tabs > li > a:hover {  border-color: #eee #eee #ddd;}.nav-tabs > li.active > a,.nav-tabs > li.active > a:hover,.nav-tabs > li.active > a:focus {  color: #555;  background-color: #fff;  border: 1px solid #ddd;  border-bottom-color: transparent;  cursor: default;}.nav-tabs.nav-justified {  width: 100%;  border-bottom: 0;}.nav-tabs.nav-justified > li {  float: none;}.nav-tabs.nav-justified > li > a {  text-align: center;  margin-bottom: 5px;}.nav-tabs.nav-justified > .dropdown .dropdown-menu {  top: auto;  left: auto;}@media (min-width: 768px) {  .nav-tabs.nav-justified > li {    display: table-cell;    width: 1%;  }  .nav-tabs.nav-justified > li > a {    margin-bottom: 0;  }}.nav-tabs.nav-justified > li > a {  margin-right: 0;  border-radius: 4px;}.nav-tabs.nav-justified > .active > a,.nav-tabs.nav-justified > .active > a:hover,.nav-tabs.nav-justified > .active > a:focus {  border: 1px solid #ddd;}@media (min-width: 768px) {  .nav-tabs.nav-justified > li > a {    border-bottom: 1px solid #ddd;    border-radius: 4px 4px 0 0;  }  .nav-tabs.nav-justified > .active > a,  .nav-tabs.nav-justified > .active > a:hover,  .nav-tabs.nav-justified > .active > a:focus {    border-bottom-color: #fff;  }}@media (min-width: 768px) {  .nav-justified > li {    display: table-cell;    width: 1%;  }  .nav-justified > li > a {    margin-bottom: 0;  }}.nav-tabs-justified {  border-bottom: 0;}.nav-tabs-justified > li > a {  margin-right: 0;  border-radius: 4px;}.nav-tabs-justified > .active > a,.nav-tabs-justified > .active > a:hover,.nav-tabs-justified > .active > a:focus {  border: 1px solid #ddd;}@media (min-width: 768px) {  .nav-tabs-justified > li > a {    border-bottom: 1px solid #ddd;    border-radius: 4px 4px 0 0;  }  .nav-tabs-justified > .active > a,  .nav-tabs-justified > .active > a:hover,  .nav-tabs-justified > .active > a:focus {    border-bottom-color: #fff;  }}.tab-content > .tab-pane {  display: none;}.tab-content > .active {  display: block;}.nav-tabs .dropdown-menu {  margin-top: -1px;  border-top-right-radius: 0;  border-top-left-radius: 0;}.nav-tabs > li.active > a,.nav-tabs > li.active > a:focus,.nav-tabs > li.active > a:hover {  background-color: #EEEEEE;}.nav-tabs > li > a[data-toggle=tab] {  border-radius: 4px 4px 0 0;  background-color: white;  border: 1px solid #dedede;  border-bottom: none;}li a[data-toggle=tab] {  margin-bottom: -15px;}a[data-toggle=tab]:hover {  color: black;}.tab-content {  margin-left: 0px;}.nav-tabs li {  padding-right: 5px;  padding-left: 5px;}.nav-tabs > li.active > a,.nav-tabs > li.active > a:hover,.nav-tabs > li.active > a:focus {  background-color: #fa9500;  color: white;}ul#profileTabs {  margin-left: 0px;  padding-bottom: 7px;}.subheading {  font-size: 20px;  line-height: 26px;  margin-bottom: 16px;  margin-top: 30px;}.tab-content .tab-pane.active {  padding: 15px;  border: 1px solid #dedede;}footer {  background-color: dimgray;  min-height: 350px;  position: relative;}.footerleft {  margin-top: 50px;  padding: 0 36px;}.logofooter {  margin-bottom: 10px;  font-size: 25px;  color: #fff;  font-weight: 700;}.footerleft p {  color: #fff;  font-size: 12px !important;  margin-bottom: 15px;}.footerleft p i {  width: 20px;  color: #999;}.paddingtop-bottom {  margin-top: 50px;}.footer-ul {  list-style-type: none;  padding-left: 0px;  margin-left: 2px;}.footer-ul li {  line-height: 29px;  font-size: 12px;}.footer-ul li a, .footer-description a {  color: #a0a3a4;  transition: color 0.2s linear 0s, background 0.2s linear 0s;}.footer-ul i {  margin-right: 10px;}.footer-ul li a:hover, .footer-description a:hover {  transition: color 0.2s linear 0s, background 0.2s linear 0s;  color: #ff670f;}.social:hover {  -webkit-transform: scale(1.1);  -moz-transform: scale(1.1);  -o-transform: scale(1.1);}.icon-ul {  list-style-type: none !important;  margin: 0px;  padding: 0px;}.icon-ul li {  line-height: 75px;  width: 100%;  float: left;}.icon {  float: left;  margin-right: 5px;}.copyright {  min-height: 40px;  background-color: #333;  position: relative;}.copyright p {  text-align: center;  color: #FFF;  padding: 10px 0;  margin-bottom: 0px;}.heading7 {  font-size: 21px;  font-weight: 700;  color: #d9d6d6;  margin-bottom: 22px;}.post p {  font-size: 12px;  color: #FFF;  line-height: 20px;}.post p span {  display: block;  color: #8f8f8f;}.bottom_ul, bottom_ul li {  list-style-type: none;  float: right;  margin-bottom: 0px;}.bottom_ul li {  float: left;  line-height: 40px;}.bottom_ul li:after {  content: \"/\";  color: #FFF;  margin-right: 8px;  margin-left: 8px;}.bottom_ul li a {  color: #FFF;  font-size: 12px;}.footertop {  min-height: 60px;  background-color: darkgrey;  position: relative;  margin-top: 50px;}body {  padding-top: 51px;}p,ol,ul,li {  font-size: 1.5rem;  line-height: 2.4rem;}@media (min-width: 767px) {  p, .alert, pre, ol li ul li, ol li ol li {    max-width: 90%;  }}.text-center {  padding-top: 20px;}/* end heading styles */.col-xs-12.col-sm-7.main {  margin-bottom: 100px;}.col-xs-12 {  background-color: #fff;  padding-left: 40px;}/* search */div#search-results p {  margin-bottom: 25px;}.searchForm404 {  margin: 20px 0px;}.input-group.search {  max-width: 200px;  margin-right: 10px;  margin-top: 30px;}.sidebarSearchBar {  margin-bottom: 30px;  padding-top: 20px;}/* endsearch *//* this part adds an icon after external links, using FontAwesome*/a[href^=\"http://\"]:after,a[href^=\"https://\"]:after {  content: \"\\f08e\";  font-family: FontAwesome;  font-weight: normal;  font-style: normal;  display: inline-block;  text-decoration: none;  padding-left: 3px;}/* Strip the outbound icon when this class is present */a[href].noExtIcon::after,a.no_icon:after {  content: \"\" !important;  padding-left: 0;}/* Github edit button */i.fa.fa-github.fa-lg:hover,a.githubButton.noExtIcon:hover {  color: black;  text-decoration: none;}a.editButton {  color: #666;  text-decoration: none;}a.editButton:hover {  text-decoration: none;  color: black;}.githubButton {  color: black;  background-color: white;  border: 1px solid #777;  padding: 7px;  border-radius: 5px;  margin: 20px 0px 10px 0px;}.githubButton:hover {  background-color: #fefefe;  color: #444;  text-decoration: none;}.githubFeedback {  margin-bottom: 20px;  margin-top: 20px;}.githubButtonTopNavBar {  margin-top: -8px;}/* end github button *//* feedback button */.feedbackButton {  background-color: orange;  border: none;  color: whitesmoke;  padding: 6px 14px;  text-align: center;  text-decoration: none;  display: inline-block;  font-size: 16px;  border-radius: 4px;  box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.15);}.feedbackButton a {  color: whitesmoke;}.feedbackButton:hover {  background-color: #F79B08;}/* end feedback button *//* syntax highlightig */body.docs .highlight .err {  color: #a61717;  background-color: transparent !important;}/* svg styling */.ie9 img[src$=\".svg\"] {  width: 100%;}/* 2 */@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  img[src$=\".svg\"] {    width: 100%;  }}/* end *//* image styles */figcaption {  padding-bottom: 12px;  padding-top: 6px;  margin-bottom: 20px;  font-style: italic;  color: gray;}/* end */span.projectTitle {  font-family: Arial;  font-weight: bold;}ul#entrypages li {  font-size: 12px;}.productSubtitle, a.productSubtitle {  color: #777;}a.productSubtitle:hover {  text-decoration: none;  color: #999;  cursor: pointer;}.main img {  margin: 12px 0px 3px 0px;  width: auto;  height: auto;  max-width: 100%;  max-height: 100%;}.main img.large {  max-width: 700px;}.main img.medium {  max-width: 600px;}.main img.small {  max-width: 300px;}.main img.inline {  margin: 0px;  vertical-align: middle;}dl dt p {  margin-left: 20px;}dl dd {  margin-top: 10px;  margin-bottom: 10px;  margin-left: 30px;}dd p {  margin-top: 12px;}dd pre {  margin-top: 12px;  margin-bottom: 12px;}.main li {  margin: 10px 0px;}body.docs .highlight .err {  color: #a61717;  background-color: transparent !important;}video {  display: block;  margin: 30px 0px;  border: 1px solid #c0c0c0;}nav#toc ul li ul li {  margin-left: 10px;}nav#toc ul li ul li,div#toc2 ul li ul li {  margin: 2px 16px;}pre {  overflow: auto;  margin: 20px 0px;  background-color: black;  color: whitesmoke;}.legend img {  margin: 5px;}.legend {  margin-bottom: 20px;}img.docimage.border {  border: 1px solid #dedede;}span.red {  color: red;}/* footer */p.external {  font-size: 11px;}ol li ol li {  list-style-type: lower-alpha;}img.inline {  vertical-align: bottom;}figure {  margin: 10px 0px;}ol li ul li {  list-style: disc;}/* mini toc javascript styles start */nav#toc ul li,div#toc2 ul li {  margin: 8px 0px 8px 22px;  font-size: 90%;  list-style: square;}nav#toc > ul::before,div#toc2 > ul::before {  font-weight: 500;  color: #555;  text-align: center;  margin-left: auto;  margin-right: auto;  width: 70px;  padding-top: 20px;  padding-bottom: 20px;  padding-left: 10px;}nav#toc ul,nav#toc2 ul {  background-color: #f7f7f7;  padding: 5px;  border-radius: 5px;  max-width: 300px;  color: gray;}nav#toc2 ul {  padding-left: 25px;}/* mini toc styles end *//* mini toc kramdown */ul#markdown-toc {  border: 1px solid #dedede;  border-radius: 5px;  max-width: 400px;  padding-top: 20px;  margin-top: 30px;  color: gray;  padding-right: 7px;}ul#markdown-toc::before {  font-size: 18px;  padding-top: 30px;  margin: 20px 0px 20px -30px;}/* end mini toc */.number_legend img.inline {  margin-bottom: 2px;}.endpointParam {  color: red;}/* homepage */h1.homepageTitle {  margin-top: 50px;}ul.homepageLinks {  list-style: none;  padding: 0px;  margin: 0px;}ul.homepageLinks li {  margin-bottom: 6px;}a codebody.docs .highlighter-rouge {  color: #337ab7;}/* end homepage */.docSample {  padding: 15px;  background-color: #e8f4ff;  margin: 1em 0em;}blockquote {  padding: 1em;  background-color: #e6f3f7;  margin: 1em 0em;  border-left: 0px;}a[data-toggle=tooltip] {  color: green;  border-bottom: 1px dashed gray;}.box {  padding: 10px;  border: 1px solid #888;  box-shadow: 2px 2px 4px #dedede;  width: 100px;  height: 80px;  background-color: #f5f5f5;  font-family: Arial;  font-size: 12px;  hyphens: auto;  float: left;  font-size: 12px;}.box:hover {  background-color: #f0f0f0;}#userMap {  overflow-x: auto;  overflow-y: auto;  padding: 20px;  min-width: 770px;}#userMap .active {  background-color: #d6f5d6;  border: 1px solid #555;  font-weight: bold;}h2.userMapTitle {  font-family: Arial;}#userMap a:hover {  text-decoration: none;}div.arrow {  max-width: 50px;  margin-left: 15px;  margin-right: 15px;  font-size: 20px;}div.content {  max-width: 110px;}#userMap div.arrow, #userMap div.content {  float: left;}.clearfix {  clear: both;}#userMap div.arrow {  position: relative;  top: 30px;}.box1 {  margin-left: 0px;}button.btn.btn-default.btn-lg.modalButton1 {  margin-left: -20px;}div.box.box1 {  margin-left: -20px;}#userMap .btn-lg {  width: 100px;  height: 80px;}#userMap .complexArrow {  font-size: 22px;  margin: 0px 10px;}#userMap .btn-lg .active {  background-color: #d6f5d6;}#userMap .btn-lg {  white-space: pre-wrap; /* css-3 */  white-space: -moz-pre-wrap; /* Mozilla, since 1999 */  white-space: -pre-wrap; /* Opera 4-6 */  white-space: -o-pre-wrap; /* Opera 7 */  word-wrap: break-word; /* Internet Explorer 5.5+ */  font-size: 14px;}/*# sourceMappingURL=main.css.map */",
+  "url": "assetscssmain.css",
+  "product": ""
+}
+,
+
+
+      
+
+"pdf-copyright-page-html": {
+  "title": "",
+  "tags": "",
+  "content": "",
+  "url": "pdf_copyright_page.html",
+  "product": ""
+}
+,
+
+
+      
+
+"pdf-title-page-html": {
+  "title": "",
+  "tags": "",
+  "content": "                            Last generated: February 20, 2024    ",
+  "url": "pdf_title_page.html",
+  "product": ""
+}
+,
+
+
+      
+
+"pdf-toc-page-html": {
+  "title": "Table of Contents",
+  "tags": "",
+  "content": "  ",
+  "url": "pdf_toc_page.html",
+  "product": ""
+}
+,
+
+
+      
+
+"assets-prince-list-txt": {
+  "title": "",
+  "tags": "",
+  "content": "",
+  "url": "assetsprince-list.txt",
+  "product": ""
+}
+,
+
+
+      
+
+"search-html": {
+  "title": "Search",
+  "tags": "",
+  "content": "                                    ",
+  "url": "search.html",
+  "product": ""
+}
+,
+
+
+      
+
+"assets-js-search-js": {
+  "title": "",
+  "tags": "",
+  "content": "(function() {  function displaySearchResults(results, store) {    var searchResults = document.getElementById('search-results');    if (results.length) { // Are there any results?      var appendString = '';       // for (var i = 0; i ' + item.title + '';        appendString += '' + item.content.substring(0, 150) + '... [' + item.product + ']';      }      searchResults.innerHTML = appendString;    } else {      // this is a hack for the inability to submit different language strings here      searchResults.innerHTML = '{{site.uistring.no_search_results_found}}';    }  }  function getQueryVariable(variable) {    var query = window.location.search.substring(1);    var vars = query.split('&');    for (var i = 0; i < vars.length; i++) {      var pair = vars[i].split('=');      if (pair[0] === variable) {        return decodeURIComponent(pair[1].replace(/\\+/g, '%20'));      }    }  }  var searchTerm = getQueryVariable('query');  if (searchTerm) {    document.getElementById('search-box').setAttribute(\"value\", searchTerm);    // Initalize lunr with the fields it will be searching on. I've given title    // a boost of 10 to indicate matches on this field are more important.    var idx = lunr(function () {      this.field('id');      this.field('title', { boost: 10 });      this.field('product');      this.field('tags');      this.field('content');    });    for (var key in window.store) { // Add the data to lunr      idx.add({        'id': key,        'title': window.store[key].title,        'tags': window.store[key].tags,        'content': window.store[key].content,        'product': window.store[key].product      });      var results = idx.search(searchTerm); // Get lunr to perform a search      displaySearchResults(results, window.store); // We'll write this in the next section    }  }})();",
+  "url": "assetsjssearch.js",
+  "product": ""
+}
+,
+
+
+      
+
+      
+
+"assets-css-user-defined-web-styles-css": {
+  "title": "",
+  "tags": "",
+  "content": "/* left blank so you can overwrite this in your own project without copying the layout too */",
+  "url": "assetscssuser_defined_web_styles.css",
+  "product": ""
+}
+,
+
+
+      
+
+"assets-css-main-css-map": {
+  "title": "",
+  "tags": "",
+  "content": "{\"version\":3,\"sourceRoot\":\"\",\"sources\":[\"../../_sass/navbar.scss\",\"../../_sass/headings.scss\",\"../../_sass/sidebar.scss\",\"../../_sass/alerts.scss\",\"../../_sass/syntax_highlighting.scss\",\"../../_sass/table.scss\",\"../../_sass/navtabs.scss\",\"../../_sass/footer.scss\",\"../../_sass/custom.scss\",\"../../_sass/workflowmaps.scss\"],\"names\":[],\"mappings\":\"AAAA;EACE;EACA;;;AAEF;EACE;;;AAEF;AAAA;EAEE;;;AAEF;EACE;;;AAEF;EACE;;;AAEF;AAAA;EAEE;;;AAEF;EACE;;;AAEF;EACE;;;AAEF;AAAA;EAEE;EACA;;;AAEF;EACE;;;AAEF;AAAA;AAAA;EAGE;EACA;;;AAEF;AAAA;AAAA;EAGE;EACA;;;AAEF;AAAA;AAAA;EAGE;EACA;;;AAEF;EACE;;;AAEF;AAAA;EAEE;;;AAEF;EACE;;;AAEF;AAAA;EAEE;;;AAEF;EACE;;;AAEF;EACE;;;AAGF;EACE;IACE;;EAEF;AAAA;IAEE;;EAEF;AAAA;AAAA;IAGE;IACA;;;AAMJ;EACE;;;AAGF;EACE;;;AAEF;EACE;EACA;;;AAEF;EACE;EACA;;;AAGF;EACE;IACE;;;AAIJ;EACE;EACA;;;AAMF;EACE;EACA;;;AAGF;AAEA;EACE;;;AAGF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAEF;EACE;;;AAEF;EACE;;;AAEF;EACE;;;AAEF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;;;AAEF;EACE;;;AAEF;EACE;;;AAGF;EACE;;;AAGF;EACI;EACA;EACA;;;AAGJ;EACE;EACA;;;AAGF;EACE;EACA;;;AAEF;AAEA;AAuCA;AAEA;AAEA;EACI;;;AC3OJ;AAEA;AAEA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;EAOE;EACA;;;AAGF;EACE;;;AAGF;EACE;;;AAGF;EACE;;;AAGF;EACE;;;AAEF;EACE;;;AAEF;EACE;EACA;EACA;EACA;;;AAEF;EACE;;;AAGF;EACE;;;AAEF;EACE;;;AAEF;EACE;;;AClDF;EACE;;;AAEF;EACE;EACA;EACA;;;AAEF;EACE;;;AAEF;EACE;EACA;EACA;;;AAEF;AAAA;EAEE;EACA;;;AAEF;AAEA;AAAA;AAAA;EAGE;EACA;EACA;EACA;EACA;EACA;;;AAEF;AAEA;AAAA;AAAA;EAGE;EACA;EACA;EACA;EACA;AACA;;;AAEF;AAEA;EACE;EACA;EACA;EACA;EACA;;;AAEF;AAAA;EAEE;;;AAEF;AAAA;EAEE;;;AAEF;AAAA;EAEE;;;AAEF;EACE;;;AAEF;AAAA;AAAA;EAGE;EACA;;;AAEF;AAAA;AAAA;EAGE;;;AAEF;EACE;EACA;EACA;;;AAEF;EACE;EACA;EACA;EACA;EACA;;;AAEF;EACE;EACA;EACA;EACA;AACA;EAEA;EACA;EACA;;;AAEF;EACE;EACA;EACA;AACA;EAEA;AACA;EAEA;AACA;EAEA;AACA;EAEA;AACA;EAEA;;;AAEF;EACE;IACE;;EAEF;IACE;;;AAGJ;EACE;IACE;;;AAIJ;EACE;;;AAGF;EACE;EACA;EACA;;;AAEF;EACE;;;AAGF;AAEA;EACE;IACE;IACA;IACA;IACA;;EAEF;IACE;;EAEF;IACE;;EAEF;IACE;;EAEF;IACE;;EAEF;IACE;IACA;IACA;;EAEF;IACE;;;AAIJ;EACE;EACA;EACA;;;AAMF;EACE;;;AC/LF;AAEA;EACE;EACA;EACA;EACA;EACA;;;AAEF;EACE;EACA;EACA;;;AAEF;EACE;;;AAEF;EACE;;;AAEF;EACE;;;AAEF;EACE;;;AAEF;EACE;;;AAEF;EACE;;;AAEF;EACE;;;AAEF;EACE;;;AAEF;EACE;;;AAEF;EACE;;;AAEF;EACE;;;AAEF;EACE;;;AAEF;EACE;;;AAEF;EACE;;;AAEF;EACE;;;AAGF;EACE;;;AAGF;EACI;EACA;EACA;EACA;EACA;;;AAGJ;EACI;EACA;EACA;;;AAGJ;EACI;EACA;EACA;;;AAGJ;EACI;EACA;EACA;;;AAGJ;EACI;EACA;;;AAGJ;EACI;EACA;;;AAGJ;EACI;EACA;;;AAEJ;ACxGA;EACI;EACA;EACA;AACA;EAEA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAEJ;EACI;;;AAEJ;EACI;;;AAEJ;AAEA;EACI;EACA;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAGA;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;AAEA;EACI;;;AAEJ;ACpUA;EACE;;;AAGF;EACE;;;AAEF;EACE;EACA;EACA;EACA;;;AAEF;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;EASE;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;EACA;EACA;;;AAEF;EACE;EACA;EACA;EACA;EACA;EACA;;;AAEF;AAAA;AAAA;AAAA;AAAA;AAAA;EAME;;;AAEF;EACE;;;AAEF;EACE;EACA;EACA;;;AAEF;AAAA;EAEE;EACA;EACA;;;AAEF;EACE;AACA;;;AAEF;EACE;;;AAEF;EACE;;;AAEF;EACE;;;AAEF;EACE;;;AAEF;EACE;;;AAGF;EACE;;;AAEF;AAAA;EAEE;AACA;EAEA;AACA;EAEA;AACA;EAEA;AACA;EAEA;AACA;;;AAEF;EACE;;;AAEF;EACE;;;AAGF;EACE;AACA;EAEA;AACA;EAEA;AACA;EAEA;AACA;EAEA;AACA;;;AAEF;EACE;;;AAEF;EACE;;;AAEF;EACE;;;ACvIF;AAEA;AAAA;AAAA;EAGE;EACA;;;AAEF;EACE;;;AAEF;EACE;EACA;;;AAEF;EACE;EACA;EACA;EACA;;;AAEF;EACE;;;AAEF;AAAA;AAAA;EAGE;EACA;EACA;EACA;EACA;;;AAEF;EACE;EACA;;;AAEF;EACE;;;AAEF;EACE;EACA;;;AAEF;EACE;EACA;;;AAEF;EACE;IACE;IACA;;EAEF;IACE;;;AAGJ;EACE;EACA;;;AAEF;AAAA;AAAA;EAGE;;;AAEF;EACE;IACE;IACA;;EAEF;AAAA;AAAA;IAGE;;;AAGJ;EACE;IACE;IACA;;EAEF;IACE;;;AAGJ;EACE;;;AAEF;EACE;EACA;;;AAEF;AAAA;AAAA;EAGE;;;AAEF;EACE;IACE;IACA;;EAEF;AAAA;AAAA;IAGE;;;AAGJ;EACE;;;AAEF;EACE;;;AAEF;EACE;EACA;EACA;;;AAEF;AAAA;AAAA;EAGE;;;AAEF;EACE;EACA;EACA;EACA;;;AAEF;EACE;;;AAEF;EACE;;;AAEF;EACE;;;AAEF;EACE;EACA;;;AAEF;AAAA;AAAA;EAGE;EACA;;;AAEF;EACE;EACA;;;AAEF;EACE;EACA;EACA;EACA;;;AAGF;EACE;EACA;;;ACnKF;EACE;EACA;EACA;;;AAEF;EACE;EACA;;;AAEF;EACE;EACA;EACA;EACA;;;AAEF;EACE;EACA;EACA;;;AAEF;EACE;EACA;;;AAEF;EACE;;;AAEF;EACE;EACA;EACA;;;AAEF;EACE;EACA;;;AAEF;EACE;EACA;;;AAEF;EACE;;;AAEF;EACE;EACA;;;AAEF;EACE;EACA;EACA;;;AAEF;EACE;EACA;EACA;;;AAEF;EACE;EACA;EACA;;;AAEF;EACE;EACA;;;AAEF;EACE;EACA;EACA;;;AAEF;EACE;EACA;EACA;EACA;;;AAEF;EACE;EACA;EACA;EACA;;;AAEF;EACE;EACA;EACA;;;AAEF;EACE;EACA;;;AAEF;EACE;EACA;EACA;;;AAEF;EACE;EACA;;;AAEF;EACE;EACA;EACA;EACA;;;AAEF;EACE;EACA;;;AAEF;EACE;EACA;EACA;EACA;;;ACnHF;EACE;;;AAIF;AAAA;AAAA;AAAA;EAIE;EACA;;;AAGF;EAEA;IACE;;;AAKF;EACE;;;AAEF;AAEA;EACE;;;AAGF;EACE;EACA;;;AAGF;AAEA;EACE;;;AAGF;EACE;;;AAGF;EACE;EACA;EACA;;;AAEF;EACE;EACA;;;AAEF;AAGA;AAEA;AAAA;EAEE;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;AAEA;AAAA;EAGE;EACA;;;AAGF;AACA;AAAA;EAEE;EACA;;;AAEF;EACE;EACA;;;AAEF;EACE;EACA;;;AAEF;EACE;EACA;EACA;EACA;EACA;EACA;;;AAEF;EACE;EACA;EACA;;;AAGF;EACI;EACA;;;AAEJ;EACE;;;AAEF;AAEA;AACA;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAEF;EACE;;;AAEF;EACE;;;AAEF;AAEA;AAEA;EACE;EACA;;;AAEF;AAEA;EACI;;;AAEJ;AAEA;EAEI;IACI;;;AAGR;AACA;AAEA;EACI;EACA;EACA;EACA;EACA;;;AAEJ;AAEA;EACI;EACA;;;AAEJ;EACI;;;AAIJ;EACI;;;AAGJ;EACE;EACA;EACA;;;AAIF;EACI;EACA;EACA;EACA;EACA;;;AAGJ;EACE;;;AAGF;EACE;;;AAGF;EACE;;;AAGF;EACI;EACA;;;AAGJ;EACI;;;AAEJ;EACI;EACA;EACA;;;AAEJ;EACI;;;AAEJ;EACI;EACA;;;AAEJ;EACI;;;AAIJ;EACI;EACA;;;AAEJ;EACI;EACA;EACA;;;AAIJ;EACI;;;AAEJ;AAAA;EAEI;;;AAIJ;EACI;EACA;EACA;EACA;;;AAGJ;EACE;;;AAGF;EACE;;;AAGF;EACI;;;AAEJ;EACI;;;AAEJ;AAGA;EACI;;;AAEJ;EACI;;;AAEJ;EACI;;;AAEJ;EACI;;;AAEJ;EACI;;;AAGJ;AAEA;AAAA;EAEE;EACA;EACA;;;AAEF;AAAA;EAEE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAEF;AAAA;EAEE;EACA;EACA;EACA;EACA;;;AAEF;EACE;;;AAEF;AAEA;AACA;EACE;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;EACA;;;AAEF;AAGA;EACE;;;AAGF;EACE;;;AAGF;AAEA;EACE;;;AAGF;EACE;EACA;EACA;;;AAGF;EACE;;;AAGF;EACI;;;AAEJ;AAEA;EACI;EACA;EACA;;;AAGJ;EACC;EACA;EACA;EACC;;;AAGF;EACI;EACA;;;ACpYJ;EACI;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGJ;EACI;;;AAGJ;EACI;EACA;EACA;EACA;;;AAGJ;EACI;EACA;EACA;;;AAGJ;EACI;;;AAGJ;EACI;;;AAGJ;EACI;EACA;EACA;EACA;;;AAGJ;EACI;;;AAGJ;EACI;;;AAGJ;EACI;;;AAIJ;EACI;EACA;;;AAGJ;EACI;;;AAGJ;EACI;;;AAGJ;EACI;;;AAGJ;EACI;EACA;;;AAIJ;EACI;EACA;;;AAIJ;EACI;;;AAGJ;EACQ;EACA;EACA;EACA;EACA;EACA\",\"sourcesContent\":[\".navbar-default {\\r\\n  background-color: #ffffff;\\r\\n  border-color: #ffffff;\\r\\n}\\r\\n.navbar-default .navbar-brand {\\r\\n  color: #111111;\\r\\n}\\r\\n.navbar-default .navbar-brand:hover,\\r\\n.navbar-default .navbar-brand:focus {\\r\\n  color: #ee7600;\\r\\n}\\r\\n.navbar-default .navbar-text {\\r\\n  color: #111111;\\r\\n}\\r\\n.navbar-default .navbar-nav > li > a {\\r\\n  color: #111111;\\r\\n}\\r\\n.navbar-default .navbar-nav > li > a:hover,\\r\\n.navbar-default .navbar-nav > li > a:focus {\\r\\n  color: #ee7600;\\r\\n}\\r\\n.navbar-default .navbar-nav > li > .dropdown-menu {\\r\\n  background-color: #ffffff;\\r\\n}\\r\\n.navbar-default .navbar-nav > li > .dropdown-menu > li > a {\\r\\n  color: #111111;\\r\\n}\\r\\n.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,\\r\\n.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {\\r\\n  color: #ee7600;\\r\\n  background-color: #ffffff;\\r\\n}\\r\\n.navbar-default .navbar-nav > li > .dropdown-menu > li > .divider {\\r\\n  background-color: #ffffff;\\r\\n}\\r\\n.navbar-default .navbar-nav .open .dropdown-menu > .active > a,\\r\\n.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,\\r\\n.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {\\r\\n  color: #ee7600;\\r\\n  background-color: #ffffff;\\r\\n}\\r\\n.navbar-default .navbar-nav > .active > a,\\r\\n.navbar-default .navbar-nav > .active > a:hover,\\r\\n.navbar-default .navbar-nav > .active > a:focus {\\r\\n  color: #ee7600;\\r\\n  background-color: #ffffff;\\r\\n}\\r\\n.navbar-default .navbar-nav > .open > a,\\r\\n.navbar-default .navbar-nav > .open > a:hover,\\r\\n.navbar-default .navbar-nav > .open > a:focus {\\r\\n  color: #ee7600;\\r\\n  background-color: #ffffff;\\r\\n}\\r\\n.navbar-default .navbar-toggle {\\r\\n  border-color: #ffffff;\\r\\n}\\r\\n.navbar-default .navbar-toggle:hover,\\r\\n.navbar-default .navbar-toggle:focus {\\r\\n  background-color: #ffffff;\\r\\n}\\r\\n.navbar-default .navbar-toggle .icon-bar {\\r\\n  background-color: #111111;\\r\\n}\\r\\n.navbar-default .navbar-collapse,\\r\\n.navbar-default .navbar-form {\\r\\n  border-color: #111111;\\r\\n}\\r\\n.navbar-default .navbar-link {\\r\\n  color: #111111;\\r\\n}\\r\\n.navbar-default .navbar-link:hover {\\r\\n  color: #ee7600;\\r\\n}\\r\\n\\r\\n@media (max-width: 767px) {\\r\\n  .navbar-default .navbar-nav .open .dropdown-menu > li > a {\\r\\n    color: #111111;\\r\\n  }\\r\\n  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,\\r\\n  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {\\r\\n    color: #ee7600;\\r\\n  }\\r\\n  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,\\r\\n  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,\\r\\n  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {\\r\\n    color: #ee7600;\\r\\n    background-color: #ffffff;\\r\\n  }\\r\\n}\\r\\n\\r\\n//custom tom\\r\\n\\r\\nul.navbar-nav a:hover {\\r\\n  text-decoration: underline;\\r\\n}\\r\\n\\r\\nimg.navbar-logo {\\r\\n  max-height: 50px;\\r\\n}\\r\\n.navbar-brand {\\r\\n  margin-right: 30px;\\r\\n  padding-top: 10px;\\r\\n}\\r\\n.navbar {\\r\\n  border-bottom: 1px solid #dedede;\\r\\n  font-size: 16px;\\r\\n}\\r\\n\\r\\n@media (min-width: 768px) {\\r\\n  .navbar-nav > li {\\r\\n    padding-top: 10px;\\r\\n  }\\r\\n}\\r\\n\\r\\n.navbar-default .navbar-nav>li>a {\\r\\n  font-size: 16px;\\r\\n  font-family: Arial;\\r\\n}\\r\\n\\r\\n.sidebarToggle.fa.fa-columns.fa-2x {\\r\\n}\\r\\n\\r\\nul.nav.navbar-nav li a {\\r\\n  white-space: nowrap;\\r\\n  margin-right: 7px;\\r\\n}\\r\\n\\r\\n/* search area */\\r\\n\\r\\n#search-topnav-container {\\r\\n  margin-top: -26px;\\r\\n}\\r\\n\\r\\n#search-demo-container ul#results-container {\\r\\n  list-style: none;\\r\\n  font-size: 12px;\\r\\n  background-color: white;\\r\\n  position: absolute;\\r\\n  top: 40px;\\r\\n  left: 20px;\\r\\n  z-index: -1;\\r\\n  width: 223px;\\r\\n  border-left: 1px solid #dedede;\\r\\n  box-shadow: 2px 3px 2px #dedede;\\r\\n}\\r\\nul#results-container a {\\r\\n  background-color: transparent;\\r\\n}\\r\\nul#results-container a:hover {\\r\\n  color: black;\\r\\n}\\r\\n#search-demo-container a:hover {\\r\\n  color: black;\\r\\n}\\r\\n#search-input {\\r\\n  width: 20em;\\r\\n  font-size: 0.8em;\\r\\n  -webkit-box-sizing: border-box;\\r\\n  -moz-box-sizing: border-box;\\r\\n  box-sizing: border-box;\\r\\n  float: right;\\r\\n  margin-top:10px;\\r\\n}\\r\\n#search-results {\\r\\n  margin-top: 30px;\\r\\n}\\r\\ndiv.searchFormDisplay {\\r\\n  display: none;\\r\\n}\\r\\n\\r\\n.navbar-brand {\\r\\n  margin-right: 50px;\\r\\n}\\r\\n\\r\\n.navbar-brand-text {\\r\\n    margin-top: 15px;\\r\\n    font-size: 25px;\\r\\n    margin-right: 50px;\\r\\n}\\r\\n\\r\\na.navbarHomeLink {\\r\\n  color: black;\\r\\n  text-decoration: none;\\r\\n}\\r\\n\\r\\ni.fa.fa-home.fa-lg {\\r\\n  padding-right: 10px;\\r\\n  vertical-align: 0%;\\r\\n}\\r\\n/* end search */\\r\\n\\r\\n/*set navbar breakpoint so that it converts to hamburger earlier */\\r\\n//\\r\\n// @media (max-width: 900px) {\\r\\n//     .navbar-header {\\r\\n//         float: none;\\r\\n//     }\\r\\n//     .navbar-left,.navbar-right {\\r\\n//         float: none !important;\\r\\n//     }\\r\\n//     .navbar-toggle {\\r\\n//         display: block;\\r\\n//     }\\r\\n//     .navbar-collapse {\\r\\n//         border-top: 1px solid transparent;\\r\\n//         box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);\\r\\n//     }\\r\\n//     .navbar-fixed-top {\\r\\n//         top: 0;\\r\\n//         border-width: 0 0 1px;\\r\\n//     }\\r\\n//     .navbar-collapse.collapse {\\r\\n//         display: none!important;\\r\\n//     }\\r\\n//     .navbar-nav {\\r\\n//         float: none!important;\\r\\n//         margin-top: 7.5px;\\r\\n//     }\\r\\n//     .navbar-nav>li {\\r\\n//         float: none;\\r\\n//     }\\r\\n//     .navbar-nav>li>a {\\r\\n//         padding-top: 10px;\\r\\n//         padding-bottom: 10px;\\r\\n//     }\\r\\n//     .collapse.in{\\r\\n//         display:block !important;\\r\\n//     }\\r\\n// }\\r\\n\\r\\n/* end earlier breakpoint code */\\r\\n\\r\\n/* Feedback button */\\r\\n\\r\\ni.fa.fa-envelope-o.topnavfeedback {\\r\\n    padding-right: 8px;\\r\\n}\\r\\n\",\"/* heading styles */\\r\\n\\r\\n/*make room for the nav bar */\\r\\n\\r\\nh1[id],\\r\\nh2[id],\\r\\nh3[id],\\r\\nh4[id],\\r\\nh5[id],\\r\\nh6[id],\\r\\ndt[id] {\\r\\n  padding-top:80px;\\r\\n  margin-top:-60px;\\r\\n}\\r\\n\\r\\nh1 {\\r\\n  margin-bottom: 30px;\\r\\n}\\r\\n\\r\\nh2 {\\r\\n  margin-bottom: 25px;\\r\\n}\\r\\n\\r\\nh3 {\\r\\n  margin-bottom: 20px;\\r\\n}\\r\\n\\r\\nh2 {\\r\\n  color: #444;\\r\\n}\\r\\nh3 {\\r\\n  color: #777;\\r\\n}\\r\\n.subtitle {\\r\\n  font-size: 16px;\\r\\n  color: gray;\\r\\n  margin-top: 50px;\\r\\n  padding-bottom: 15px;\\r\\n}\\r\\nh1 {\\r\\n  margin-top: 0px;\\r\\n}\\r\\n\\r\\n.h2, h2 {\\r\\n  font-size: 24px;\\r\\n}\\r\\n.h3, h3 {\\r\\n  font-size: 18px;\\r\\n}\\r\\n.h4, h4 {\\r\\n  font-size: 16px;\\r\\n}\",\".docnav {\\r\\n  max-width: 225px;\\r\\n}\\r\\n.docnav {\\r\\n  padding-left: 0px;\\r\\n  margin-left: 10px;\\r\\n  padding-right: 15px;\\r\\n}\\r\\n.docnav ul {\\r\\n  padding-left: 15px\\r\\n}\\r\\n.docnav li {\\r\\n  list-style: none;\\r\\n  font: normal 12px \\\"Open Sans\\\", \\\"Lucida Grande\\\", \\\"Helvetica Neue\\\", Arial;\\r\\n  border-bottom: 0px;\\r\\n}\\r\\n.docnav li a:hover,\\r\\n.docnav li a:active {\\r\\n  text-decoration: none;\\r\\n  color: #666;\\r\\n}\\r\\n/* plus */\\r\\n\\r\\n.docnav li.level1 > a > span:after,\\r\\n.docnav li.level2 > a > span:after,\\r\\n.docnav li.level3 > a > span:after {\\r\\n  content: '\\\\f0fe';\\r\\n  font-family: 'FontAwesome';\\r\\n  color: #e47911;\\r\\n  font-size: 14px;\\r\\n  padding-right: 12px;\\r\\n  text-decoration: none;\\r\\n}\\r\\n/* empty square*/\\r\\n\\r\\n.docnav li.level1items > a:before,\\r\\n.docnav li.level2items > a:before,\\r\\n.docnav li.level3items > a:before {\\r\\n  content: '\\\\f096';\\r\\n  font-family: 'FontAwesome';\\r\\n  color: #e47911;\\r\\n  padding-right: 10px;\\r\\n  text-decoration: none;\\r\\n  /*text-indent: -1.5em;*/\\r\\n}\\r\\n/* minus */\\r\\n\\r\\n.docnav li.open > a > span:after {\\r\\n  content: '\\\\f146';\\r\\n  font-family: 'FontAwesome';\\r\\n  color: #e47911;\\r\\n  font-size: 14px;\\r\\n  padding-right: 10px;\\r\\n}\\r\\n.docnav li.level3,\\r\\n.docnav li.level3items {\\r\\n  padding-left: 10px\\r\\n}\\r\\n.docnav li.level2,\\r\\n.docnav li.level2items {\\r\\n  padding-left: 10px;\\r\\n}\\r\\n.docnav li.level1,\\r\\n.docnav li.level1items {\\r\\n  padding-left: 10px;\\r\\n}\\r\\n.docnav li {\\r\\n  margin: 7px 0px;\\r\\n}\\r\\nli.level1.open > ul > li.level1items.open a,\\r\\nli.level2.open > ul > li.level2items.open a,\\r\\nli.level3.open > ul > li.level3items.open a {\\r\\n  color: black;\\r\\n  font-weight: bold;\\r\\n}\\r\\nli.level1.open > ul > li.level1items.open > a:before,\\r\\nli.level2.open > ul > li.level2items.open > a:before,\\r\\nli.level3.open > ul > li.level3items.open > a:before {\\r\\n  color: black;\\r\\n}\\r\\n.relatedResources {\\r\\n  font-size: 13px;\\r\\n  color: black;\\r\\n  margin: 10px 0px;\\r\\n}\\r\\n.productTitle {\\r\\n  font-size: 18px;\\r\\n  font-weight: bold;\\r\\n  color: #333333;\\r\\n  display: block;\\r\\n  margin-right: 8px;\\r\\n}\\r\\nhr.resourceSeparator {\\r\\n  display: block;\\r\\n  margin-top: 1.7em;\\r\\n  margin-bottom: 1.7em;\\r\\n  margin-left: 0px;\\r\\n  /*margin-right: auto;*/\\r\\n\\r\\n  border-width: 1px;\\r\\n  color: black;\\r\\n  max-width: 80%;\\r\\n}\\r\\n.docnav li a {\\r\\n  line-height: 18px;\\r\\n  display: table;\\r\\n  white-space: pre-wrap;\\r\\n  /* css-3 */\\r\\n\\r\\n  white-space: -moz-pre-wrap;\\r\\n  /* Mozilla, since 1999 */\\r\\n\\r\\n  white-space: -pre-wrap;\\r\\n  /* Opera 4-6 */\\r\\n\\r\\n  white-space: -o-pre-wrap;\\r\\n  /* Opera 7 */\\r\\n\\r\\n  word-wrap: break-word;\\r\\n  /* Internet Explorer 5.5+ */\\r\\n\\r\\n  text-indent: -20px;\\r\\n}\\r\\n@media (max-width: 600px) {\\r\\n  .docnav li a {\\r\\n    max-width: 180px;\\r\\n  }\\r\\n  .githubButton {\\r\\n    display: none;\\r\\n  }\\r\\n}\\r\\n@media (min-width: 600px) {\\r\\n  .docnav li a {\\r\\n    max-width: 240px;\\r\\n  }\\r\\n}\\r\\n\\r\\nul#docnavsidebar li a:focus {\\r\\n  text-decoration: none;\\r\\n}\\r\\n\\r\\n#sidebar {\\r\\n  height: 100%;\\r\\n  padding-right: 0;\\r\\n  overflow-y: auto;\\r\\n}\\r\\n#sidebar .nav {\\r\\n  width: 95%;\\r\\n}\\r\\n\\r\\n/* collapsed sidebar styles */\\r\\n\\r\\n@media screen and (max-width: 767px) {\\r\\n  .row-offcanvas {\\r\\n    position: relative;\\r\\n    -webkit-transition: all 0.75s ease-out;\\r\\n    -moz-transition: all 0.75s ease-out;\\r\\n    transition: all 0.75s ease-out;\\r\\n  }\\r\\n  .row-offcanvas-right .sidebar-offcanvas {\\r\\n    right: -41.6%;\\r\\n  }\\r\\n  .row-offcanvas-left .sidebar-offcanvas {\\r\\n    left: -41.6%;\\r\\n  }\\r\\n  .row-offcanvas-right.active {\\r\\n    right: 41.6%;\\r\\n  }\\r\\n  .row-offcanvas-left.active {\\r\\n    left: 41.6%;\\r\\n  }\\r\\n  .sidebar-offcanvas {\\r\\n    position: absolute;\\r\\n    top: 0;\\r\\n    width: 41.6%;\\r\\n  }\\r\\n  #sidebar {\\r\\n    padding-top: 0;\\r\\n  }\\r\\n}\\r\\n\\r\\n#sidebar {\\r\\n  background-color: #f7f7f7;\\r\\n  padding-bottom: 50px;\\r\\n  padding-top: 50px;\\r\\n}\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n.mydocsidebar .input-group.search {\\r\\n  margin-top: -10px;\\r\\n}\\r\\n\",\"/* callout styles*/\\r\\n\\r\\n.bs-callout {\\r\\n  padding: 20px;\\r\\n  margin: 20px 0;\\r\\n  border: 1px solid #eee;\\r\\n  border-left-width: 5px;\\r\\n  border-radius: 3px;\\r\\n}\\r\\n.calloutTitle {\\r\\n  margin-top: 0;\\r\\n  margin-bottom: 5px;\\r\\n  font-size: 16px;\\r\\n}\\r\\n.bs-callout p:last-child {\\r\\n  margin-bottom: 0;\\r\\n}\\r\\n.bs-callout code {\\r\\n  border-radius: 3px;\\r\\n}\\r\\n.bs-callout+.bs-callout {\\r\\n  margin-top: -5px;\\r\\n}\\r\\n.bs-callout-default {\\r\\n  border-left-color: #777;\\r\\n}\\r\\n.bs-callout-default .calloutTitle {\\r\\n  color: #777;\\r\\n}\\r\\n.bs-callout-primary {\\r\\n  border-left-color: #428bca;\\r\\n}\\r\\n.bs-callout-primary .calloutTitle {\\r\\n  color: #428bca;\\r\\n}\\r\\n.bs-callout-success {\\r\\n  border-left-color: #5cb85c;\\r\\n}\\r\\n.bs-callout-success .calloutTitle {\\r\\n  color: #5cb85c;\\r\\n}\\r\\n.bs-callout-danger {\\r\\n  border-left-color: #d9534f;\\r\\n}\\r\\n.bs-callout-danger .calloutTitle {\\r\\n  color: #d9534f;\\r\\n}\\r\\n.bs-callout-warning {\\r\\n  border-left-color: #f0ad4e;\\r\\n}\\r\\n.bs-callout-warning .calloutTitle {\\r\\n  color: #f0ad4e;\\r\\n}\\r\\n.bs-callout-info {\\r\\n  border-left-color: #5bc0de;\\r\\n}\\r\\n.bs-callout-info .calloutTitle {\\r\\n  color: #5bc0de;\\r\\n}\\r\\n\\r\\n.alert code {\\r\\n  background: transparent;\\r\\n}\\r\\n\\r\\nblockquote {\\r\\n    background-color: #eef7fa;\\r\\n    font-family: arial;\\r\\n    font-size: .9em;\\r\\n    margin: 0px;\\r\\n    padding: 1em;\\r\\n}\\r\\n\\r\\np.note {\\r\\n    background: #f1f1f1;\\r\\n    padding: 1em;\\r\\n    border-left: 1em solid orange;\\r\\n}\\r\\n\\r\\np.tip {\\r\\n    background: #f1f1f1;\\r\\n    padding: 1em;\\r\\n    border-left: 1em solid deepskyblue;\\r\\n}\\r\\n\\r\\np.warning {\\r\\n    background: #f1f1f1;\\r\\n    padding: 1em;\\r\\n    border-left: 1em solid red;\\r\\n}\\r\\n\\r\\np.note::before {\\r\\n    content: \\\"Note: \\\";\\r\\n    font-weight: bold;\\r\\n}\\r\\n\\r\\np.tip::before {\\r\\n    content: \\\"Tip: \\\";\\r\\n    font-weight: bold;\\r\\n}\\r\\n\\r\\np.warning::before {\\r\\n    content: \\\"Warning: \\\";\\r\\n    font-weight: bold;\\r\\n}\\r\\n/* end callout styles*/\\r\\n\",\"body.docs .highlight {\\r\\n    white-space: pre;\\r\\n    overflow: auto;\\r\\n    word-wrap: normal;\\r\\n    /* horizontal scrolling */\\r\\n\\r\\n    -moz-border-radius: 5px;\\r\\n    -webkit-border-radius: 5px;\\r\\n    border-radius: 5px;\\r\\n    padding: 15px;\\r\\n    padding-left: 10px;\\r\\n    background: #202020;\\r\\n    color: whitesmoke;\\r\\n}\\r\\nbody.docs .highlight .hll {\\r\\n    background-color: #202020\\r\\n}\\r\\nbody.docs .highlight .c {\\r\\n    color: #75715e\\r\\n}\\r\\n/* Comment */\\r\\n\\r\\nbody.docs .highlight .err {\\r\\n    color: lime;\\r\\n    background-color: #1e0010\\r\\n}\\r\\n/* Error */\\r\\n\\r\\nbody.docs .highlight .k {\\r\\n    color: #66d9ef\\r\\n}\\r\\n/* Keyword */\\r\\n\\r\\nbody.docs .highlight .l {\\r\\n    color: #ae81ff\\r\\n}\\r\\n/* Literal */\\r\\n\\r\\nbody.docs .highlight .n {\\r\\n    color: #f8f8f2\\r\\n}\\r\\n/* Name */\\r\\n\\r\\nbody.docs .highlight .o {\\r\\n    color: #f92672\\r\\n}\\r\\n/* Operator */\\r\\n\\r\\nbody.docs .highlight .p {\\r\\n    color: #f8f8f2\\r\\n}\\r\\n/* Punctuation */\\r\\n\\r\\nbody.docs .highlight .cm {\\r\\n    color: #75715e\\r\\n}\\r\\n/* Comment.Multiline */\\r\\n\\r\\nbody.docs .highlight .cp {\\r\\n    color: #75715e\\r\\n}\\r\\n/* Comment.Preproc */\\r\\n\\r\\nbody.docs .highlight .c1 {\\r\\n    color: #75715e\\r\\n}\\r\\n/* Comment.Single */\\r\\n\\r\\nbody.docs .highlight .cs {\\r\\n    color: #75715e\\r\\n}\\r\\n/* Comment.Special */\\r\\n\\r\\nbody.docs .highlight .ge {\\r\\n    font-style: italic\\r\\n}\\r\\n/* Generic.Emph */\\r\\n\\r\\nbody.docs .highlight .gs {\\r\\n    font-weight: bold\\r\\n}\\r\\n/* Generic.Strong */\\r\\n\\r\\nbody.docs .highlight .kc {\\r\\n    color: #66d9ef\\r\\n}\\r\\n/* Keyword.Constant */\\r\\n\\r\\nbody.docs .highlight .kd {\\r\\n    color: #66d9ef\\r\\n}\\r\\n/* Keyword.Declaration */\\r\\n\\r\\nbody.docs .highlight .kn {\\r\\n    color: #f92672\\r\\n}\\r\\n/* Keyword.Namespace */\\r\\n\\r\\nbody.docs .highlight .kp {\\r\\n    color: #66d9ef\\r\\n}\\r\\n/* Keyword.Pseudo */\\r\\n\\r\\nbody.docs .highlight .kr {\\r\\n    color: #66d9ef\\r\\n}\\r\\n/* Keyword.Reserved */\\r\\n\\r\\nbody.docs .highlight .kt {\\r\\n    color: #66d9ef\\r\\n}\\r\\n/* Keyword.Type */\\r\\n\\r\\nbody.docs .highlight .ld {\\r\\n    color: #e6db74\\r\\n}\\r\\n/* Literal.Date */\\r\\n\\r\\nbody.docs .highlight .m {\\r\\n    color: #ae81ff\\r\\n}\\r\\n/* Literal.Number */\\r\\n\\r\\nbody.docs .highlight .s {\\r\\n    color: #e6db74\\r\\n}\\r\\n/* Literal.String */\\r\\n\\r\\nbody.docs .highlight .na {\\r\\n    color: #a6e22e\\r\\n}\\r\\n/* Name.Attribute */\\r\\n\\r\\nbody.docs .highlight .nb {\\r\\n    color: #f8f8f2\\r\\n}\\r\\n/* Name.Builtin */\\r\\n\\r\\nbody.docs .highlight .nc {\\r\\n    color: #a6e22e\\r\\n}\\r\\n/* Name.Class */\\r\\n\\r\\nbody.docs .highlight .no {\\r\\n    color: #66d9ef\\r\\n}\\r\\n/* Name.Constant */\\r\\n\\r\\nbody.docs .highlight .nd {\\r\\n    color: #a6e22e\\r\\n}\\r\\n/* Name.Decorator */\\r\\n\\r\\nbody.docs .highlight .ni {\\r\\n    color: #f8f8f2\\r\\n}\\r\\n/* Name.Entity */\\r\\n\\r\\nbody.docs .highlight .ne {\\r\\n    color: #a6e22e\\r\\n}\\r\\n/* Name.Exception */\\r\\n\\r\\nbody.docs .highlight .nf {\\r\\n    color: #a6e22e\\r\\n}\\r\\n/* Name.Function */\\r\\n\\r\\nbody.docs .highlight .nl {\\r\\n    color: #f8f8f2\\r\\n}\\r\\n/* Name.Label */\\r\\n\\r\\nbody.docs .highlight .nn {\\r\\n    color: #f8f8f2\\r\\n}\\r\\n/* Name.Namespace */\\r\\n\\r\\nbody.docs .highlight .nx {\\r\\n    color: #a6e22e\\r\\n}\\r\\n/* Name.Other */\\r\\n\\r\\nbody.docs .highlight .py {\\r\\n    color: #f8f8f2\\r\\n}\\r\\n/* Name.Property */\\r\\n\\r\\nbody.docs .highlight .nt {\\r\\n    color: #dedede;\\r\\n}\\r\\n/* Name.Tag */\\r\\n\\r\\nbody.docs .highlight .nv {\\r\\n    color: #f8f8f2\\r\\n}\\r\\n/* Name.Variable */\\r\\n\\r\\nbody.docs .highlight .ow {\\r\\n    color: #f92672\\r\\n}\\r\\n/* Operator.Word */\\r\\n\\r\\nbody.docs .highlight .w {\\r\\n    color: #f8f8f2\\r\\n}\\r\\n/* Text.Whitespace */\\r\\n\\r\\nbody.docs .highlight .mf {\\r\\n    color: #ae81ff\\r\\n}\\r\\n/* Literal.Number.Float */\\r\\n\\r\\nbody.docs .highlight .mh {\\r\\n    color: #ae81ff\\r\\n}\\r\\n/* Literal.Number.Hex */\\r\\n\\r\\nbody.docs .highlight .mi {\\r\\n    color: #ae81ff\\r\\n}\\r\\n/* Literal.Number.Integer */\\r\\n\\r\\nbody.docs .highlight .mo {\\r\\n    color: #ae81ff\\r\\n}\\r\\n/* Literal.Number.Oct */\\r\\n\\r\\nbody.docs .highlight .sb {\\r\\n    color: #e6db74\\r\\n}\\r\\n/* Literal.String.Backtick */\\r\\n\\r\\nbody.docs .highlight .sc {\\r\\n    color: #e6db74\\r\\n}\\r\\n/* Literal.String.Char */\\r\\n\\r\\nbody.docs .highlight .sd {\\r\\n    color: #e6db74\\r\\n}\\r\\n/* Literal.String.Doc */\\r\\n\\r\\nbody.docs .highlight .s2 {\\r\\n    color: #e6db74\\r\\n}\\r\\n/* Literal.String.Double */\\r\\n\\r\\nbody.docs .highlight .se {\\r\\n    color: #ae81ff\\r\\n}\\r\\n/* Literal.String.Escape */\\r\\n\\r\\nbody.docs .highlight .sh {\\r\\n    color: #e6db74\\r\\n}\\r\\n/* Literal.String.Heredoc */\\r\\n\\r\\nbody.docs .highlight .si {\\r\\n    color: #e6db74\\r\\n}\\r\\n/* Literal.String.Interpol */\\r\\n\\r\\nbody.docs .highlight .sx {\\r\\n    color: #e6db74\\r\\n}\\r\\n/* Literal.String.Other */\\r\\n\\r\\nbody.docs .highlight .sr {\\r\\n    color: #e6db74\\r\\n}\\r\\n/* Literal.String.Regex */\\r\\n\\r\\nbody.docs .highlight .s1 {\\r\\n    color: #e6db74\\r\\n}\\r\\n/* Literal.String.Single */\\r\\n\\r\\nbody.docs .highlight .ss {\\r\\n    color: #e6db74\\r\\n}\\r\\n/* Literal.String.Symbol */\\r\\n\\r\\nbody.docs .highlight .bp {\\r\\n    color: #f8f8f2\\r\\n}\\r\\n/* Name.Builtin.Pseudo */\\r\\n\\r\\nbody.docs .highlight .vc {\\r\\n    color: #f8f8f2\\r\\n}\\r\\n/* Name.Variable.Class */\\r\\n\\r\\nbody.docs .highlight .vg {\\r\\n    color: #f8f8f2\\r\\n}\\r\\n/* Name.Variable.Global */\\r\\n\\r\\nbody.docs .highlight .vi {\\r\\n    color: #f8f8f2\\r\\n}\\r\\n/* Name.Variable.Instance */\\r\\n\\r\\nbody.docs .highlight .il {\\r\\n    color: #ae81ff\\r\\n}\\r\\n/* Literal.Number.Integer.Long */\\r\\n\\r\\nbody.docs .highlight .gh {}\\r\\n/* Generic Heading & Diff Header */\\r\\n\\r\\nbody.docs .highlight .gu {\\r\\n    color: #75715e;\\r\\n}\\r\\n/* Generic.Subheading & Diff Unified/Comment? */\\r\\n\\r\\nbody.docs .highlight .gd {\\r\\n    color: #f92672;\\r\\n}\\r\\n/* Generic.Deleted & Diff Deleted */\\r\\n\\r\\nbody.docs .highlight .gi {\\r\\n    color: #a6e22e;\\r\\n}\\r\\n/* Generic.Inserted & Diff Inserted */\\r\\n\",\"table p {\\r\\n  max-width: 100%;\\r\\n}\\r\\n\\r\\nth {\\r\\n  text-align: left;\\r\\n}\\r\\ntable {\\r\\n  width: 100%;\\r\\n  margin-bottom: 20px;\\r\\n  border: 1px solid #dedede;\\r\\n  background-color: transparent;\\r\\n}\\r\\ntable > thead > tr > th,\\r\\ntable > tbody > tr > th,\\r\\ntable > tfoot > tr > th,\\r\\ntable > thead > tr > td,\\r\\ntable > tbody > tr > td,\\r\\ntable > tfoot > tr > td,\\r\\ntable > tbody > tr > td ol > li,\\r\\ntable > tbody > tr > td ol > li\\r\\n{\\r\\n  padding: 8px;\\r\\n  line-height: 1.42857143;\\r\\n  vertical-align: top;\\r\\n  border-top: 1px solid #ddd;\\r\\n  font-size: 15px;\\r\\n}\\r\\n\\r\\ntable > tbody > tr > td > p {\\r\\n  padding: 8px 0px;\\r\\n  line-height: 1.42857143;\\r\\n  vertical-align: top;\\r\\n  font-size: 1.5rem;\\r\\n}\\r\\ntable > thead > tr > th {\\r\\n  vertical-align: bottom;\\r\\n  border-bottom: 2px solid #ddd;\\r\\n  text-transform: none;\\r\\n  background-color: #777;\\r\\n  color: white;\\r\\n  text-align: left;\\r\\n}\\r\\ntable > caption + thead > tr:first-child > th,\\r\\ntable > colgroup + thead > tr:first-child > th,\\r\\ntable > thead:first-child > tr:first-child > th,\\r\\ntable > caption + thead > tr:first-child > td,\\r\\ntable > colgroup + thead > tr:first-child > td,\\r\\ntable > thead:first-child > tr:first-child > td {\\r\\n  border-top: 0;\\r\\n}\\r\\ntable > tbody > tr:nth-of-type(odd) {\\r\\n  background-color: #f9f9f9;\\r\\n}\\r\\ntable col[class*=\\\"col-\\\"] {\\r\\n  position: static;\\r\\n  display: table-column;\\r\\n  float: none;\\r\\n}\\r\\ntable td[class*=\\\"col-\\\"],\\r\\ntable th[class*=\\\"col-\\\"] {\\r\\n  position: static;\\r\\n  display: table-cell;\\r\\n  float: none;\\r\\n}\\r\\ntable td:first-child {\\r\\n  width: 150px;\\r\\n  /*font-weight:bold;*/\\r\\n}\\r\\ntable.boldFirstColumn td:first-child {\\r\\n  font-weight: bold;\\r\\n}\\r\\ntable tr td {\\r\\n  hyphens: auto;\\r\\n}\\r\\ntable.dataTable thead {\\r\\n  background-color: #444;\\r\\n}\\r\\ntable td {\\r\\n  hyphens: auto;\\r\\n}\\r\\ntable code {\\r\\n  background-color: transparent;\\r\\n}\\r\\n\\r\\ntable code {\\r\\n  background-color: transparent;\\r\\n}\\r\\npre,\\r\\ntable code {\\r\\n  white-space: pre-wrap;\\r\\n  /* css-3 */\\r\\n\\r\\n  white-space: -moz-pre-wrap;\\r\\n  /* Mozilla, since 1999 */\\r\\n\\r\\n  white-space: -pre-wrap;\\r\\n  /* Opera 4-6 */\\r\\n\\r\\n  white-space: -o-pre-wrap;\\r\\n  /* Opera 7 */\\r\\n\\r\\n  word-wrap: break-word;\\r\\n  /* Internet Explorer 5.5+ */\\r\\n}\\r\\ntd.white {\\r\\n  background-color: white;\\r\\n}\\r\\ntd.gray {\\r\\n  background-color: #f7f7f7;\\r\\n}\\r\\n\\r\\ntable code {\\r\\n  white-space: pre-wrap;\\r\\n  /* css-3 */\\r\\n\\r\\n  white-space: -moz-pre-wrap;\\r\\n  /* Mozilla, since 1999 */\\r\\n\\r\\n  white-space: -pre-wrap;\\r\\n  /* Opera 4-6 */\\r\\n\\r\\n  white-space: -o-pre-wrap;\\r\\n  /* Opera 7 */\\r\\n\\r\\n  word-wrap: break-word;\\r\\n  /* Internet Explorer 5.5+ */\\r\\n}\\r\\ntable, table p, table ol li, table ul li {\\r\\n  max-width: 100%;\\r\\n}\\r\\ntable code {\\r\\n  word-wrap: break-word\\r\\n}\\r\\ntable {\\r\\n  table-layout: auto;\\r\\n}\",\"/*nav tabs */\\r\\n\\r\\n.nav-tabs > li.active > a,\\r\\n.nav-tabs > li.active > a:hover,\\r\\n.nav-tabs > li.active > a:focus {\\r\\n  background-color: #248ec2;\\r\\n  color: white;\\r\\n}\\r\\n.nav-tabs {\\r\\n  border-bottom: 1px solid #ddd;\\r\\n}\\r\\n.nav-tabs>li {\\r\\n  float: left;\\r\\n  margin-bottom: -1px;\\r\\n}\\r\\n.nav-tabs>li>a {\\r\\n  margin-right: 2px;\\r\\n  line-height: 1.42857143;\\r\\n  border: 1px solid transparent;\\r\\n  border-radius: 4px 4px 0 0;\\r\\n}\\r\\n.nav-tabs>li>a:hover {\\r\\n  border-color: #eee #eee #ddd;\\r\\n}\\r\\n.nav-tabs>li.active>a,\\r\\n.nav-tabs>li.active>a:hover,\\r\\n.nav-tabs>li.active>a:focus {\\r\\n  color: #555;\\r\\n  background-color: #fff;\\r\\n  border: 1px solid #ddd;\\r\\n  border-bottom-color: transparent;\\r\\n  cursor: default;\\r\\n}\\r\\n.nav-tabs.nav-justified {\\r\\n  width: 100%;\\r\\n  border-bottom: 0;\\r\\n}\\r\\n.nav-tabs.nav-justified>li {\\r\\n  float: none;\\r\\n}\\r\\n.nav-tabs.nav-justified>li>a {\\r\\n  text-align: center;\\r\\n  margin-bottom: 5px;\\r\\n}\\r\\n.nav-tabs.nav-justified>.dropdown .dropdown-menu {\\r\\n  top: auto;\\r\\n  left: auto;\\r\\n}\\r\\n@media (min-width: 768px) {\\r\\n  .nav-tabs.nav-justified>li {\\r\\n    display: table-cell;\\r\\n    width: 1%\\r\\n  }\\r\\n  .nav-tabs.nav-justified>li>a {\\r\\n    margin-bottom: 0;\\r\\n  }\\r\\n}\\r\\n.nav-tabs.nav-justified>li>a {\\r\\n  margin-right: 0;\\r\\n  border-radius: 4px;\\r\\n}\\r\\n.nav-tabs.nav-justified>.active>a,\\r\\n.nav-tabs.nav-justified>.active>a:hover,\\r\\n.nav-tabs.nav-justified>.active>a:focus {\\r\\n  border: 1px solid #ddd;\\r\\n}\\r\\n@media (min-width: 768px) {\\r\\n  .nav-tabs.nav-justified>li>a {\\r\\n    border-bottom: 1px solid #ddd;\\r\\n    border-radius: 4px 4px 0 0;\\r\\n  }\\r\\n  .nav-tabs.nav-justified>.active>a,\\r\\n  .nav-tabs.nav-justified>.active>a:hover,\\r\\n  .nav-tabs.nav-justified>.active>a:focus {\\r\\n    border-bottom-color: #fff;\\r\\n  }\\r\\n}\\r\\n@media (min-width: 768px) {\\r\\n  .nav-justified>li {\\r\\n    display: table-cell;\\r\\n    width: 1%\\r\\n  }\\r\\n  .nav-justified>li>a {\\r\\n    margin-bottom: 0;\\r\\n  }\\r\\n}\\r\\n.nav-tabs-justified {\\r\\n  border-bottom: 0;\\r\\n}\\r\\n.nav-tabs-justified>li>a {\\r\\n  margin-right: 0;\\r\\n  border-radius: 4px;\\r\\n}\\r\\n.nav-tabs-justified>.active>a,\\r\\n.nav-tabs-justified>.active>a:hover,\\r\\n.nav-tabs-justified>.active>a:focus {\\r\\n  border: 1px solid #ddd;\\r\\n}\\r\\n@media (min-width: 768px) {\\r\\n  .nav-tabs-justified>li>a {\\r\\n    border-bottom: 1px solid #ddd;\\r\\n    border-radius: 4px 4px 0 0;\\r\\n  }\\r\\n  .nav-tabs-justified>.active>a,\\r\\n  .nav-tabs-justified>.active>a:hover,\\r\\n  .nav-tabs-justified>.active>a:focus {\\r\\n    border-bottom-color: #fff;\\r\\n  }\\r\\n}\\r\\n.tab-content>.tab-pane {\\r\\n  display: none;\\r\\n}\\r\\n.tab-content>.active {\\r\\n  display: block;\\r\\n}\\r\\n.nav-tabs .dropdown-menu {\\r\\n  margin-top: -1px;\\r\\n  border-top-right-radius: 0;\\r\\n  border-top-left-radius: 0;\\r\\n}\\r\\n.nav-tabs>li.active>a,\\r\\n.nav-tabs>li.active>a:focus,\\r\\n.nav-tabs>li.active>a:hover {\\r\\n  background-color: #EEEEEE;\\r\\n}\\r\\n.nav-tabs>li>a[data-toggle=\\\"tab\\\"] {\\r\\n  border-radius: 4px 4px 0 0;\\r\\n  background-color: white;\\r\\n  border: 1px solid #dedede;\\r\\n  border-bottom: none;\\r\\n}\\r\\nli a[data-toggle=\\\"tab\\\"] {\\r\\n  margin-bottom: -15px;\\r\\n}\\r\\na[data-toggle=\\\"tab\\\"]:hover {\\r\\n  color: black;\\r\\n}\\r\\n.tab-content {\\r\\n  margin-left: 0px;\\r\\n}\\r\\n.nav-tabs li {\\r\\n  padding-right: 5px;\\r\\n  padding-left: 5px;\\r\\n}\\r\\n.nav-tabs > li.active > a,\\r\\n.nav-tabs > li.active > a:hover,\\r\\n.nav-tabs > li.active > a:focus {\\r\\n  background-color: #fa9500;\\r\\n  color: white;\\r\\n}\\r\\nul#profileTabs {\\r\\n  margin-left: 0px;\\r\\n  padding-bottom: 7px;\\r\\n}\\r\\n.subheading {\\r\\n  font-size: 20px;\\r\\n  line-height: 26px;\\r\\n  margin-bottom: 16px;\\r\\n  margin-top: 30px;\\r\\n}\\r\\n\\r\\n.tab-content .tab-pane.active {\\r\\n  padding: 15px;\\r\\n  border: 1px solid #dedede;\\r\\n}\\r\\n\",\"footer {\\r\\n  background-color: dimgray;\\r\\n  min-height: 350px;\\r\\n  position: relative;\\r\\n}\\r\\n.footerleft {\\r\\n  margin-top: 50px;\\r\\n  padding: 0 36px;\\r\\n}\\r\\n.logofooter {\\r\\n  margin-bottom: 10px;\\r\\n  font-size: 25px;\\r\\n  color: #fff;\\r\\n  font-weight: 700;\\r\\n}\\r\\n.footerleft p {\\r\\n  color: #fff;\\r\\n  font-size: 12px !important;\\r\\n  margin-bottom: 15px;\\r\\n}\\r\\n.footerleft p i {\\r\\n  width: 20px;\\r\\n  color: #999;\\r\\n}\\r\\n.paddingtop-bottom {\\r\\n  margin-top: 50px;\\r\\n}\\r\\n.footer-ul {\\r\\n  list-style-type: none;\\r\\n  padding-left: 0px;\\r\\n  margin-left: 2px;\\r\\n}\\r\\n.footer-ul li {\\r\\n  line-height: 29px;\\r\\n  font-size: 12px;\\r\\n}\\r\\n.footer-ul li a, .footer-description a {\\r\\n  color: #a0a3a4;\\r\\n  transition: color 0.2s linear 0s, background 0.2s linear 0s;\\r\\n}\\r\\n.footer-ul i {\\r\\n  margin-right: 10px;\\r\\n}\\r\\n.footer-ul li a:hover, .footer-description a:hover {\\r\\n  transition: color 0.2s linear 0s, background 0.2s linear 0s;\\r\\n  color: #ff670f;\\r\\n}\\r\\n.social:hover {\\r\\n  -webkit-transform: scale(1.1);\\r\\n  -moz-transform: scale(1.1);\\r\\n  -o-transform: scale(1.1);\\r\\n}\\r\\n.icon-ul {\\r\\n  list-style-type: none !important;\\r\\n  margin: 0px;\\r\\n  padding: 0px;\\r\\n}\\r\\n.icon-ul li {\\r\\n  line-height: 75px;\\r\\n  width: 100%;\\r\\n  float: left;\\r\\n}\\r\\n.icon {\\r\\n  float: left;\\r\\n  margin-right: 5px;\\r\\n}\\r\\n.copyright {\\r\\n  min-height: 40px;\\r\\n  background-color: #333;\\r\\n  position: relative;\\r\\n}\\r\\n.copyright p {\\r\\n  text-align: center;\\r\\n  color: #FFF;\\r\\n  padding: 10px 0;\\r\\n  margin-bottom: 0px;\\r\\n}\\r\\n.heading7 {\\r\\n  font-size: 21px;\\r\\n  font-weight: 700;\\r\\n  color: #d9d6d6;\\r\\n  margin-bottom: 22px;\\r\\n}\\r\\n.post p {\\r\\n  font-size: 12px;\\r\\n  color: #FFF;\\r\\n  line-height: 20px;\\r\\n}\\r\\n.post p span {\\r\\n  display: block;\\r\\n  color: #8f8f8f;\\r\\n}\\r\\n.bottom_ul, bottom_ul li {\\r\\n  list-style-type: none;\\r\\n  float: right;\\r\\n  margin-bottom: 0px;\\r\\n}\\r\\n.bottom_ul li {\\r\\n  float: left;\\r\\n  line-height: 40px;\\r\\n}\\r\\n.bottom_ul li:after {\\r\\n  content: \\\"/\\\";\\r\\n  color: #FFF;\\r\\n  margin-right: 8px;\\r\\n  margin-left: 8px;\\r\\n}\\r\\n.bottom_ul li a {\\r\\n  color: #FFF;\\r\\n  font-size: 12px;\\r\\n}\\r\\n.footertop {\\r\\n  min-height: 60px;\\r\\n  background-color: darkgrey;\\r\\n  position: relative;\\r\\n  margin-top: 50px;\\r\\n}\\r\\n\",\"body {\\r\\n  padding-top: 51px;\\r\\n}\\r\\n\\r\\n\\r\\np,\\r\\nol,\\r\\nul,\\r\\nli {\\r\\n  font-size: 1.5rem;\\r\\n  line-height: 2.4rem;\\r\\n}\\r\\n\\r\\n@media (min-width: 767px)\\r\\n{\\r\\np, .alert, pre, ol li ul li, ol li ol li {\\r\\n  max-width: 90%;\\r\\n}\\r\\n\\r\\n}\\r\\n\\r\\n.text-center {\\r\\n  padding-top: 20px;\\r\\n}\\r\\n/* end heading styles */\\r\\n\\r\\n.col-xs-12.col-sm-7.main {\\r\\n  margin-bottom: 100px;\\r\\n}\\r\\n\\r\\n.col-xs-12 {\\r\\n  background-color: #fff;\\r\\n  padding-left: 40px;\\r\\n}\\r\\n\\r\\n/* search */\\r\\n\\r\\ndiv#search-results p {\\r\\n  margin-bottom: 25px;\\r\\n}\\r\\n\\r\\n.searchForm404 {\\r\\n  margin: 20px 0px;\\r\\n}\\r\\n\\r\\n.input-group.search {\\r\\n  max-width: 200px;\\r\\n  margin-right: 10px;\\r\\n  margin-top: 30px;\\r\\n}\\r\\n.sidebarSearchBar {\\r\\n  margin-bottom: 30px;\\r\\n  padding-top:20px;\\r\\n}\\r\\n/* endsearch */\\r\\n\\r\\n\\r\\n/* this part adds an icon after external links, using FontAwesome*/\\r\\n\\r\\na[href^=\\\"http://\\\"]:after,\\r\\na[href^=\\\"https://\\\"]:after {\\r\\n  content: \\\"\\\\f08e\\\";\\r\\n  font-family: FontAwesome;\\r\\n  font-weight: normal;\\r\\n  font-style: normal;\\r\\n  display: inline-block;\\r\\n  text-decoration: none;\\r\\n  padding-left: 3px;\\r\\n}\\r\\n\\r\\n/* Strip the outbound icon when this class is present */\\r\\n\\r\\na[href].noExtIcon::after,\\r\\na.no_icon:after\\r\\n {\\r\\n  content: \\\"\\\" !important;\\r\\n  padding-left: 0;\\r\\n}\\r\\n\\r\\n/* Github edit button */\\r\\ni.fa.fa-github.fa-lg:hover,\\r\\na.githubButton.noExtIcon:hover {\\r\\n  color: black;\\r\\n  text-decoration: none;\\r\\n}\\r\\na.editButton {\\r\\n  color: #666;\\r\\n  text-decoration: none;\\r\\n}\\r\\na.editButton:hover {\\r\\n  text-decoration: none;\\r\\n  color: black;\\r\\n}\\r\\n.githubButton {\\r\\n  color: black;\\r\\n  background-color: white;\\r\\n  border: 1px solid #777;\\r\\n  padding: 7px;\\r\\n  border-radius: 5px;\\r\\n  margin: 20px 0px 10px 0px;\\r\\n}\\r\\n.githubButton:hover {\\r\\n  background-color: #fefefe;\\r\\n  color: #444;\\r\\n  text-decoration: none;\\r\\n}\\r\\n\\r\\n.githubFeedback {\\r\\n    margin-bottom: 20px;\\r\\n    margin-top: 20px;\\r\\n}\\r\\n.githubButtonTopNavBar {\\r\\n  margin-top: -8px;\\r\\n}\\r\\n/* end github button */\\r\\n\\r\\n/* feedback button */\\r\\n.feedbackButton {\\r\\n  background-color: orange;\\r\\n  border: none;\\r\\n  color: whitesmoke;\\r\\n  padding: 6px 14px;\\r\\n  text-align: center;\\r\\n  text-decoration: none;\\r\\n  display: inline-block;\\r\\n  font-size: 16px;\\r\\n  border-radius: 4px;\\r\\n  box-shadow: 0 5px 6px 0 rgba(0,0,0,0.15);\\r\\n}\\r\\n.feedbackButton a {\\r\\n  color: whitesmoke;\\r\\n}\\r\\n.feedbackButton:hover {\\r\\n  background-color: #F79B08;\\r\\n}\\r\\n/* end feedback button */\\r\\n\\r\\n/* syntax highlightig */\\r\\n\\r\\nbody.docs .highlight .err {\\r\\n  color: #a61717;\\r\\n  background-color: transparent !important;\\r\\n}\\r\\n/* svg styling */\\r\\n\\r\\n.ie9 img[src$=\\\".svg\\\"] {\\r\\n    width: 100%;\\r\\n}\\r\\n/* 2 */\\r\\n\\r\\n@media screen and (-ms-high-contrast: active),\\r\\n(-ms-high-contrast: none) {\\r\\n    img[src$=\\\".svg\\\"] {\\r\\n        width: 100%;\\r\\n    }\\r\\n}\\r\\n/* end */\\r\\n/* image styles */\\r\\n\\r\\nfigcaption {\\r\\n    padding-bottom: 12px;\\r\\n    padding-top: 6px;\\r\\n    margin-bottom: 20px;\\r\\n    font-style: italic;\\r\\n    color: gray;\\r\\n}\\r\\n/* end */\\r\\n\\r\\nspan.projectTitle {\\r\\n    font-family: Arial;\\r\\n    font-weight: bold;\\r\\n}\\r\\nul#entrypages li {\\r\\n    font-size: 12px;\\r\\n}\\r\\n\\r\\n\\r\\n.productSubtitle, a.productSubtitle {\\r\\n    color: #777;\\r\\n}\\r\\n\\r\\na.productSubtitle:hover {\\r\\n  text-decoration: none;\\r\\n  color: #999;\\r\\n  cursor: pointer;\\r\\n}\\r\\n\\r\\n\\r\\n.main img {\\r\\n    margin: 12px 0px 3px 0px;\\r\\n    width: auto;\\r\\n    height: auto;\\r\\n    max-width: 100%;\\r\\n    max-height: 100%;\\r\\n}\\r\\n\\r\\n.main img.large {\\r\\n  max-width: 700px\\r\\n}\\r\\n\\r\\n.main img.medium {\\r\\n  max-width: 600px\\r\\n}\\r\\n\\r\\n.main img.small {\\r\\n  max-width: 300px;\\r\\n}\\r\\n\\r\\n.main img.inline {\\r\\n    margin: 0px;\\r\\n    vertical-align: middle;\\r\\n}\\r\\n\\r\\ndl dt p {\\r\\n    margin-left: 20px;\\r\\n}\\r\\ndl dd {\\r\\n    margin-top: 10px;\\r\\n    margin-bottom: 10px;\\r\\n    margin-left: 30px;\\r\\n}\\r\\ndd p {\\r\\n    margin-top: 12px;\\r\\n}\\r\\ndd pre {\\r\\n    margin-top: 12px;\\r\\n    margin-bottom: 12px;\\r\\n}\\r\\n.main li {\\r\\n    margin: 10px 0px;\\r\\n}\\r\\n\\r\\n\\r\\nbody.docs .highlight .err {\\r\\n    color: #a61717;\\r\\n    background-color: transparent !important;\\r\\n}\\r\\nvideo {\\r\\n    display: block;\\r\\n    margin: 30px 0px;\\r\\n    border: 1px solid #c0c0c0;\\r\\n}\\r\\n\\r\\n\\r\\nnav#toc ul li ul li {\\r\\n    margin-left: 10px;\\r\\n}\\r\\nnav#toc ul li ul li,\\r\\ndiv#toc2 ul li ul li {\\r\\n    margin: 2px 16px;\\r\\n}\\r\\n\\r\\n\\r\\npre {\\r\\n    overflow: auto;\\r\\n    margin: 20px 0px;\\r\\n    background-color: black;\\r\\n    color: whitesmoke;\\r\\n}\\r\\n\\r\\n.legend img {\\r\\n  margin: 5px;\\r\\n}\\r\\n\\r\\n.legend {\\r\\n  margin-bottom: 20px;\\r\\n}\\r\\n\\r\\nimg.docimage.border {\\r\\n    border: 1px solid #dedede;\\r\\n}\\r\\nspan.red {\\r\\n    color: red;\\r\\n}\\r\\n/* footer */\\r\\n\\r\\n\\r\\np.external {\\r\\n    font-size: 11px;\\r\\n}\\r\\nol li ol li {\\r\\n    list-style-type: lower-alpha;\\r\\n}\\r\\nimg.inline {\\r\\n    vertical-align: bottom;\\r\\n}\\r\\nfigure {\\r\\n    margin: 10px 0px;\\r\\n}\\r\\nol li ul li {\\r\\n    list-style: disc;\\r\\n}\\r\\n\\r\\n/* mini toc javascript styles start */\\r\\n\\r\\nnav#toc ul li,\\r\\ndiv#toc2 ul li {\\r\\n  margin: 8px 0px 8px 22px;\\r\\n  font-size: 90%;\\r\\n  list-style: square;\\r\\n}\\r\\nnav#toc >ul::before,\\r\\ndiv#toc2 >ul::before {\\r\\n  font-weight: 500;\\r\\n  color: #555;\\r\\n  text-align: center;\\r\\n  margin-left: auto;\\r\\n  margin-right: auto;\\r\\n  width: 70px;\\r\\n  padding-top: 20px;\\r\\n  padding-bottom: 20px;\\r\\n  padding-left: 10px;\\r\\n}\\r\\nnav#toc ul,\\r\\nnav#toc2 ul {\\r\\n  background-color: #f7f7f7;\\r\\n  padding: 5px;\\r\\n  border-radius: 5px;\\r\\n  max-width: 300px;\\r\\n  color: gray;\\r\\n}\\r\\nnav#toc2 ul {\\r\\n  padding-left: 25px;\\r\\n}\\r\\n/* mini toc styles end */\\r\\n\\r\\n/* mini toc kramdown */\\r\\nul#markdown-toc {\\r\\n  border: 1px solid #dedede;\\r\\n  border-radius: 5px;\\r\\n  max-width: 400px;\\r\\n  padding-top:20px;\\r\\n  margin-top: 30px;\\r\\n  color: gray;\\r\\n  padding-right: 7px;\\r\\n}\\r\\n\\r\\nul#markdown-toc::before  {\\r\\n  font-size:18px;\\r\\n  padding-top:30px;\\r\\n  margin: 20px 0px 20px -30px;\\r\\n}\\r\\n/* end mini toc */\\r\\n\\r\\n\\r\\n.number_legend img.inline {\\r\\n  margin-bottom: 2px;\\r\\n}\\r\\n\\r\\n.endpointParam {\\r\\n  color: red;\\r\\n}\\r\\n\\r\\n/* homepage */\\r\\n\\r\\nh1.homepageTitle {\\r\\n  margin-top: 50px;\\r\\n}\\r\\n\\r\\nul.homepageLinks {\\r\\n  list-style: none;\\r\\n  padding: 0px;\\r\\n  margin: 0px;\\r\\n}\\r\\n\\r\\nul.homepageLinks li {\\r\\n  margin-bottom: 6px;\\r\\n}\\r\\n\\r\\na codebody.docs .highlighter-rouge {\\r\\n    color: #337ab7;\\r\\n  }\\r\\n/* end homepage */\\r\\n\\r\\n.docSample {\\r\\n    padding: 15px;\\r\\n    background-color: #e8f4ff;\\r\\n    margin: 1em 0em;\\r\\n}\\r\\n\\r\\nblockquote {\\r\\n\\tpadding: 1em;\\r\\n\\tbackground-color: #e6f3f7;\\r\\n\\tmargin: 1em 0em;\\r\\n  border-left: 0px;\\r\\n}\\r\\n\\r\\na[data-toggle=\\\"tooltip\\\"] {\\r\\n    color: green;\\r\\n    border-bottom: 1px dashed gray;\\r\\n}\\r\\n\",\"\\r\\n.box {\\r\\n    padding: 10px;\\r\\n    border: 1px solid #888;\\r\\n    box-shadow: 2px 2px 4px #dedede;\\r\\n    width: 100px;\\r\\n    height: 80px;\\r\\n    background-color: #f5f5f5;\\r\\n    font-family: Arial;\\r\\n    font-size: 12px;\\r\\n    hyphens: auto;\\r\\n    float: left;\\r\\n    font-size: 12px;\\r\\n}\\r\\n\\r\\n.box:hover {\\r\\n    background-color: #f0f0f0;\\r\\n}\\r\\n\\r\\n#userMap {\\r\\n    overflow-x: auto;\\r\\n    overflow-y: auto;\\r\\n    padding: 20px;\\r\\n    min-width: 770px;\\r\\n}\\r\\n\\r\\n#userMap .active {\\r\\n    background-color: #d6f5d6;\\r\\n    border:1px solid #555;\\r\\n    font-weight: bold;\\r\\n}\\r\\n\\r\\nh2.userMapTitle {\\r\\n    font-family: Arial;\\r\\n}\\r\\n\\r\\n#userMap a:hover {\\r\\n    text-decoration: none;\\r\\n  }\\r\\n\\r\\ndiv.arrow {\\r\\n    max-width: 50px;\\r\\n    margin-left: 15px;\\r\\n    margin-right: 15px;\\r\\n    font-size: 20px;\\r\\n}\\r\\n\\r\\ndiv.content {\\r\\n    max-width: 110px\\r\\n}\\r\\n\\r\\n#userMap div.arrow, #userMap div.content {\\r\\n    float: left;\\r\\n}\\r\\n\\r\\n.clearfix {\\r\\n    clear: both;\\r\\n}\\r\\n\\r\\n\\r\\n#userMap div.arrow {\\r\\n    position: relative;\\r\\n    top: 30px;\\r\\n}\\r\\n\\r\\n.box1 {\\r\\n    margin-left:0px;\\r\\n}\\r\\n\\r\\nbutton.btn.btn-default.btn-lg.modalButton1 {\\r\\n    margin-left: -20px;\\r\\n}\\r\\n\\r\\ndiv.box.box1 {\\r\\n    margin-left: -20px;\\r\\n}\\r\\n\\r\\n#userMap .btn-lg {\\r\\n    width: 100px;\\r\\n    height: 80px;\\r\\n\\r\\n}\\r\\n\\r\\n#userMap .complexArrow {\\r\\n    font-size: 22px;\\r\\n    margin: 0px 10px;\\r\\n}\\r\\n\\r\\n\\r\\n#userMap .btn-lg .active {\\r\\n    background-color: #d6f5d6;\\r\\n}\\r\\n\\r\\n#userMap .btn-lg  {\\r\\n        white-space: pre-wrap;       /* css-3 */\\r\\n        white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */\\r\\n        white-space: -pre-wrap;      /* Opera 4-6 */\\r\\n        white-space: -o-pre-wrap;    /* Opera 7 */\\r\\n        word-wrap: break-word;       /* Internet Explorer 5.5+ */\\r\\n        font-size: 14px;\\r\\n    }\\r\\n\"],\"file\":\"main.css\"}",
+  "url": "assetscssmain.css.map",
+  "product": ""
+}
+
+
+
+  };
+</script>
+<!-- Lunr.js (MIT license) -->
+<script src="assets/js/lunr.min.js"></script>
+<script src="assets/js/search.js"></script>
+
+                  
+
+                    
+
+
+
+            </div>
+        </div><!--/.container-->
+
+
+    </div><!--/.page-container-->
+    <!-- * Bootsnipp footer: http://bootsnipp.com/snippets/1KEEq (MIT license) -->
+
+<div class="footertop">
+    <div class="container">
+        <div class="col-md-6">
+            <p></p>
+        </div>
+        <div class="col-md-6">
+            <ul class="bottom_ul">
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-sm-6 footerleft ">
+
+
+              
+                        <div class="logofooter"> </div>
+                <p class="footer-description"></p>
+
+            </div>
+            <div class="col-md-2 col-sm-6 paddingtop-bottom">
+                <h6 class="heading7"></h6>
+                <ul class="footer-ul">
+                  
+                </ul>
+            </div>
+
+            <div class="col-md-2 col-sm-6 paddingtop-bottom">
+              <h6 class="heading7"></h6>
+              <ul class="footer-ul">
+                
+              </ul>
+            </div>
+
+            <div class="col-md-3 col-sm-6 paddingtop-bottom">
+              <h6 class="heading7"></h6>
+              <ul class="footer-ul">
+                
+              </ul>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+</footer>
+<!--subfooter start from here -->
+
+<div class="copyright">
+    <div class="container">
+        <div class="col-md-12">
+            <p>© </p>
+        </div>
+    </div>
+</div>
+
+
+    <!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+
+</body>
+
+</html>

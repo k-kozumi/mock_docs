@@ -10,6 +10,10 @@ The output for the sidebar navigation gets generated from the sidebar yaml file 
 * TOC
 {:toc}
 
+## 検索テスト
+日本語サンプルです。
+検索ヒットするか確認します。
+
 ## How the Sidebar Works
 
 The theme contains a file called \_includes/sidebar.html that uses "for" loops to iterate through the items in this YAML file and push the content into an HTML format. When Jekyll builds your site, the sidebar gets included into each page. This means each page has its own copy of the sidebar code when the site builds.

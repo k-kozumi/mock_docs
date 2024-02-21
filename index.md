@@ -13,6 +13,10 @@ The Jekyll Doc Project theme is intended for technical documentation projects, s
 * TOC
 {:toc}
 
+## Japanese
+- hogehoge
+- テスト
+
 ## Installation
 
 Before you can install the project, you may need to install Jekyll.
